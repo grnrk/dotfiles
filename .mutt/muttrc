@@ -54,13 +54,14 @@ set use_from = yes
 
 ### Address book
 # Add sender to abook
-macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+#macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
 # enable abook Queries
-set query_command="abook --mutt-query '%s'"
-# enable tab-completion for abook searches in To: field
+#set query_command="abook --mutt-query '%s'"
+set query_command="~/.mutt/helper_script/ldap-abook.py -s '%s'"
+# enable tab-completion for query_command
 bind editor <tab> complete-query
 # Launch abook
-macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+#macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
 
 
 ### General settings
