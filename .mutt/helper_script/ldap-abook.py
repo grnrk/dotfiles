@@ -67,8 +67,8 @@ SEARCH_TERM = ' '.join(args.searchterm)
 # FUNCTIONS
 
 def ldapQ(term):
-    # Search all mail attributes where objectClass is "user" AND "person" AND any match in fuzzy_search.
-    filter_base = '(objectClass=user)(objectClass=person)(mail=*)'
+    # Search all mail attributes where objectClass is "user" or "contact" AND "person" AND any match in fuzzy_search.
+    filter_base = '(|(objectClass=user)(objectClass=contact))(objectClass=person)(mail=*)'
     fuzzy_search = '(|(mail={0}*)(mailNickname={0}*)(cn={0}*)(sn={0}*)(givenName={0}*))'.format(term)
     filtr = '(&{0}{1})'.format(filter_base, fuzzy_search)
     attrs = ['cn', 'mail']
