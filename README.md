@@ -25,3 +25,7 @@ OR (older):
 git submodule update --recursive --remote
 ```
 
+__Adding submodules__
+```
+git submodule add <GIT-REMOTE> <LOCAL_PATH>
+```
