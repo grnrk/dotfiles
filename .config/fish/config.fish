@@ -6,7 +6,7 @@ end
 set -Ux EDITOR vim
 
 # path
-set -gx PATH /sbin /usr/sbin /usr/local/sbin $PATH
+set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/git/SA/axis-connect/environment/compiled_deploy/_deploytools $PATH
 
 set -gx TERM xterm-256color
 # Colors
