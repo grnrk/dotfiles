@@ -77,18 +77,20 @@ colorscheme molokai
 
 " SYNTASTIC SETTINGS
 " recommended defaults
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 1
-"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
 "" modemap settings
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "active_filetypes": ["puppet", "php", "sh"],
-    \ "passive_filetypes": ["ruby", "python"] }
+    \ "active_filetypes": ["puppet", "python", "sh"],
+    \ "passive_filetypes": ["ruby", "php"] }
+" Set default python checker, flake8 = PEP8 + pyflakes
+let g:syntastic_python_checkers = ['flake8']
 
