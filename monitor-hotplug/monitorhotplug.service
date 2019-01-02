@@ -1,0 +1,8 @@
+[Unit]
+Description=Monitor hotplug
+
+[Service]
+Type=simple
+RemainAfterExit=no
+User=gorane
+ExecStart=/usr/local/bin/monitor-hotplug.sh
