@@ -32,6 +32,8 @@ exec --no-startup-id compton
 # dunst notification manager
 exec --no-startup-id dunst
 #bindsym $mod+Shift+i exec --no-startup-id dunst
+# Set screen resolution on laptop display
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
 
 # network manager
 exec --no-startup-id nm-applet
