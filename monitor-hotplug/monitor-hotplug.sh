@@ -6,6 +6,8 @@ INT_MONITOR="eDP-1"
 # Set DEBUG to yes to log some activity to $LOG_FILE
 DEBUG="yes"
 LOG_FILE=~/.monitor-hotplug.log
+I3_WS_BIN="/usr/local/bin/i3-workspaces.py"
+
 
 export DISPLAY=:0
 export XAUTHORITY=$(ps -C Xorg -f --no-header | sed -n 's/.*-auth //; s/ -[^ ].*//; p')
@@ -50,11 +52,15 @@ if  [ "$DISPLAYPORT_CONNECTED" == "yes" ]; then
     # xrandr sometimes is slow to detect monitor connection.
     wait_for_monitor
     xrandr --output $EXT_MONITOR --right-of $INT_MONITOR --auto
-    /usr/local/bin/i3-workspaces.py restore
+    if [ -f "$I3_WS_BIN" ]; then
+        $I3_WS_BIN restore
+    fi
 else
     if [ "$DEBUG" == "yes" ]; then
         echo "No monitor found, deactivating $EXT_MONITOR." >> $LOG_FILE
     fi
-    /usr/local/bin/i3-workspaces.py save
+    if [ -f "$I3_WS_BIN" ]; then
+        $I3_WS_BIN save
+    fi
     xrandr --output $EXT_MONITOR --off
 fi
