@@ -46,6 +46,8 @@ exec --no-startup-id amixer -q -c 0 set "Headphone Mic Boost" 10dB
 # set volumes
 exec --no-startup-id amixer -q -c 0 set Headphone 100% unmute
 exec --no-startup-id amixer -q -c 0 set Speaker 100% unmute
+# Start nextcloud client
+exec --no-startup-id nextcloud-client
 
 # Set mod-button
 set $mod Mod4
