@@ -23,8 +23,8 @@ Alt. look for the device name under /sys/class/drm/ when connected.
 
 2. monitor-hotplug.sh
   * Set `DEVICE` to the same device name as above (cardX).
-  * Set `SYS_CLASS_MONITOR` to whatever the monitor is called under /sys/class/drm/cardX-<MONITOR>
-  * Set `EXT_MONITOR` to what xrandr is calling the same monitor. (which may be different to what it's called under /sys/class/drm.)
+  * Set `EXT_MONITOR` to what xrandr is calling the external monitor port. (which may be different to what it's called under /sys/class/drm.)
+  * Set `INT_MONITOR` to what xrandr is calling your laptop monitor.
   * If the ouput of `printenv DISPLAY` is not `:0`, set DISPLAY to whatever was outputted by printenv.
 
 3. monitorhotplug.service
