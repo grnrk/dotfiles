@@ -94,3 +94,8 @@ let g:syntastic_mode_map = {
 " Set default python checker, flake8 = PEP8 + pyflakes
 let g:syntastic_python_checkers = ['flake8']
 
+" Pandoc
+" Enable pandoc for these filetypes
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+" Disable pandoc for everything else
+let g:pandoc#filetypes#pandoc_markdown = 0
