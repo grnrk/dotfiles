@@ -246,6 +246,8 @@ bindsym $mod+ctrl+l exec i3lock --ignore-empty-password -c 233038
 ## for entire application: xprop | grep -i 'class'
 ## For child windows: xprop | grep -i 'role'
 
+## xloadimage, used in mutt, adquery
+for_window [class="^Xloadimage$"] floating enable
 ## Spotify
 for_window [class="^Spotify$"] floating enable resize set 1400 800
 
