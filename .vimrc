@@ -96,6 +96,10 @@ let g:syntastic_python_checkers = ['flake8']
 
 " Pandoc
 " Enable pandoc for these filetypes
-let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
-" Disable pandoc for everything else
+let g:pandoc#filetypes#handled = ["pandoc", "markdown", "extra", "json"]
+" Use markdown syntax (instead of pandoc-markdown) for markdown.
 let g:pandoc#filetypes#pandoc_markdown = 0
+" Disable folding
+let g:pandoc#modules#disabled = ["folding"]
+" Disable spellcheck
+let g:pandoc#spell#enabled = 0
