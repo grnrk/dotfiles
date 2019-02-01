@@ -89,10 +89,11 @@ let g:syntastic_check_on_wq = 1
 "" modemap settings
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "active_filetypes": ["puppet", "python", "sh"],
+    \ "active_filetypes": ["puppet", "python", "sh", "yaml"],
     \ "passive_filetypes": ["ruby", "php"] }
 " Set default python checker, flake8 = PEP8 + pyflakes
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_yaml_checkers = ['yamllint']
 
 " Pandoc
 " Enable pandoc for these filetypes
