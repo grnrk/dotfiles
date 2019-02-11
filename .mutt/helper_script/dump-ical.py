@@ -5,10 +5,11 @@ import sys
 import warnings
 import vobject
 import datetime
-from shutil import copy2
+from shutil import copy
 from os.path import expanduser
 
 HOME = expanduser("~")
+
 
 def get_invitation_from_path(path):
     with open(path) as f:
@@ -77,10 +78,13 @@ def dump2tmp(src_file):
 
     if not os.path.exists(tmp_dir):
         os.makedirs(tmp_dir)
-    if not os.path.exists(dst_file):
-        copy2(src_file, dst_file)
+    else:
+        dir_content = os.listdir(tmp_dir)
+        if len(dir_content) > 0:
+            for f in dir_content:
+                os.remove(os.path.join(tmp_dir, f))
+    copy(src_file, dst_file)
     return
-
 
 
 if __name__ == "__main__":
@@ -92,5 +96,3 @@ if __name__ == "__main__":
     pretty_print_invitation(inv)
     # Dump ics to tmpdir to enable export with macro
     dump2tmp(ics)
-
-
