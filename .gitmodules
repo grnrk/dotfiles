@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-pandoc"]
 	path = .vim/bundle/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule ".vim/bundle/limelight.vim"]
+	path = .vim/bundle/limelight.vim
+	url = https://github.com/junegunn/limelight.vim.git

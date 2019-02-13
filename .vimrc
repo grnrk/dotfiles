@@ -13,6 +13,8 @@ syntax on
 set ignorecase
 set autoindent
 set noswapfile
+set lazyredraw
+set title
 "set paste
 set cursorline
 " dont continue with comment after enter in insert or o/O
@@ -104,3 +106,10 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 let g:pandoc#modules#disabled = ["folding"]
 " Disable spellcheck
 let g:pandoc#spell#enabled = 0
+
+" Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+function! LimelightToggle()
+    Limelight!!
+endfunc
+nnoremap <C-l> :call LimelightToggle()<cr>
