@@ -77,7 +77,7 @@ cursor          = #586e75
 background      = #fdf6e3
 # black
 color0  = #002b36
-color8  = #657b83
+color8  = #9eb7c0
 # red
 color1  = #dc322f
 color9  = #dc322f
