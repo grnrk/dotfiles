@@ -52,7 +52,7 @@ function fish_prompt
   end
 
   if not set -q __fish_prompt_user
-    set -g __fish_prompt_user (set_color ffffff)(whoami)
+    set -g __fish_prompt_user (set_color 000000)(whoami)
   end
 
   switch $USER

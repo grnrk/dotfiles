@@ -33,48 +33,73 @@ cursor_blink = on
 # set size hints for the window
 #size_hints = false
 
+## SOLARIZED LIGHT ##
 [colors]
-
-## http://terminal.sexy/
-
 # special
-foreground      = #d1d1d1
-foreground_bold = #ffffff
-cursor          = #ffffff
-background      = #212121
-
+foreground      = #586e75
+foreground_bold = #586e75
+cursor          = #586e75
+background      = #fdf6e3
 # black
-color0  = #555555
-color8  = #888888
-
+color0  = #002b36
+color8  = #657b83
 # red
-color1  = #c13220
-#color1  = #9c3528
-color9  = #d64937
-
+color1  = #dc322f
+color9  = #dc322f
 # green
-color2  = #61bc3b
-color10 = #86df5d
-
+color2  = #859900
+color10 = #859900
 # yellow
-color3  = #f3b43a
-color11 = #fdd75a
-
+color3  = #b58900
+color11 = #b58900
 # blue
-color4  = #0d68a8
-color12 = #0f75bd
-
+color4  = #268bd2
+color12 = #268bd2
 # magenta
-color5  = #744560
-color13 = #9e5e83
-
+color5  = #6c71c4
+color13 = #6c71c4
 # cyan
-color6  = #288e9c
-color14 = #37c3d6
-
+color6  = #2aa198
+color14 = #2aa198
 # white
-color7  = #a2a2a2
-color15 = #f9f9f9
+color7  = #93a1a1
+color15 = #fdf6e3
+
+
+# COLOR THEMES FROM
+# http://terminal.sexy/
+## MY DEFAULT DARK ##
+#[colors]
+## special
+#foreground      = #d1d1d1
+#foreground_bold = #ffffff
+#cursor          = #ffffff
+#background      = #212121
+## black
+#color0  = #555555
+#color8  = #888888
+## red
+#color1  = #c13220
+##color1  = #9c3528
+#color9  = #d64937
+## green
+#color2  = #61bc3b
+#color10 = #86df5d
+## yellow
+#color3  = #f3b43a
+#color11 = #fdd75a
+## blue
+#color4  = #0d68a8
+#color12 = #0f75bd
+## magenta
+#color5  = #744560
+#color13 = #9e5e83
+## cyan
+#color6  = #288e9c
+#color14 = #37c3d6
+## white
+#color7  = #a2a2a2
+#color15 = #f9f9f9
 
 
 # 20% background transparency (requires a compositor)
