@@ -37,6 +37,8 @@ exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
 
 # network manager
 exec --no-startup-id nm-applet
+# davmail
+exec --no-startup-id davmail
 # gnome-screensaver, lockscreen fix dat bg before use.
 #exec --no-startup-id gnome-screensaver
 # load Xresources
