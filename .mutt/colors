@@ -56,4 +56,4 @@ color body	magenta default '^[ +-](===|---|\+\+\+|@@|Index:) .*' # diff-in-diff
 color body	default blue '^\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*' # context diff
 color body	blue default '^! .*' # context diff
 
-color progress white red # inidcator for slow operations
+#color progress white red # inidcator for slow operations
