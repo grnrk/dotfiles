@@ -4,11 +4,11 @@
 default_command = calendar
 default_calendar = work
 show_all_days = False
-days = 7
+#days = 7
 highlight_event_days = True
 
 [view]
-frame = True
+#frame = True
 event_view_always_visible = True
 
 [highlight_days]
