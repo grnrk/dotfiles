@@ -69,13 +69,13 @@ set switchbuf=usetab,newtab
 set t_Co=256
 
 " MOLOKAI
-"let g:molokai_original = 1
-"colorscheme molokai
+let g:molokai_original = 1
+colorscheme molokai
 
 " SOLARIZED
-set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+"set background=light
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 " SYNTASTIC SETTINGS
 " recommended defaults
@@ -115,3 +115,9 @@ function! LimelightToggle()
     Limelight!!
 endfunc
 nnoremap <C-l> :call LimelightToggle()<cr>
+
+" Statusline is destroyed by syntastic settings, here we readd line,column
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %l,%c
+
