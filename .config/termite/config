@@ -1,6 +1,9 @@
 [options]
 allow_bold = true
 #audible_bell = false
+#bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
 #font = Monospace 9
@@ -14,6 +17,7 @@ font = DejaVu Sans Mono 10
 scrollback_lines = 10000
 #search_wrap = true
 #urgent_on_bell = true
+#hyperlinks = false
 
 # $BROWSER is used by default if set, with x-www-browser as a fallback
 browser = x-www-browser
@@ -33,6 +37,9 @@ cursor_blink = on
 # set size hints for the window
 #size_hints = false
 
+# "off", "left" or "right"
+#scrollbar = off
+
 # COLOR THEMES FROM
 # http://terminal.sexy/
 ## MY DEFAULT DARK ##
@@ -41,7 +48,8 @@ cursor_blink = on
 foreground      = #d1d1d1
 foreground_bold = #ffffff
 cursor          = #ffffff
-background      = #212121
+#background      = #212121
+background      = #181818
 # black
 color0  = #555555
 color8  = #888888
