@@ -116,8 +116,16 @@ function! LimelightToggle()
 endfunc
 nnoremap <C-l> :call LimelightToggle()<cr>
 
-" Statusline is destroyed by syntastic settings, here we readd line,column
+" Status line items in the right hand column.
+" Appended after syntastic hijacking.
 set statusline+=%=
 set statusline+=%#CursorColumn#
+" File type
+set statusline+=\ %y         
+" File encoding
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" File format
+set statusline+=\[%{&fileformat}\]
+" Line number, line column
 set statusline+=\ %l,%c
 
