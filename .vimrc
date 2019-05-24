@@ -11,7 +11,6 @@ filetype plugin indent on
 
 syntax on
 set ignorecase
-set autoindent
 set noswapfile
 set lazyredraw
 set title
@@ -20,14 +19,22 @@ set cursorline
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
 
-" "TABWIDTH"
-" show existing tab with 4 spaces width
+" Global tab/indentation
 set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
 set expandtab
+set autoindent
 
+" File extension based settings
+autocmd BufNewFile,BufRead *.py,*.sh
+  \ set tabstop=4
+  \ softtabstop=4
+  \ shiftwidth=4
+  \ textwidth=79
+
+autocmd BufNewFile,BufRead *.yaml,*.yml
+  \ set tabstop=2
+  \ softtabstop=2
+  \ shiftwidth=2
 
 " default to hybrid line numbers
 set number
