@@ -56,6 +56,17 @@ endfunc
 
 nnoremap <C-w> :call WhiteSpaceToggle()<cr>
 
+" window navigation rebindings
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+" window rotation rebindings
+nmap <silent> <C-A-Up> :wincmd K<CR>
+nmap <silent> <C-A-Down> :wincmd J<CR>
+nmap <silent> <C-A-Left> :wincmd H<CR>
+nmap <silent> <C-A-Right> :wincmd L<CR>
+
 " disable mouse
 set mouse-=a
 
