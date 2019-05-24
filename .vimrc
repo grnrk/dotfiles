@@ -116,6 +116,9 @@ function! LimelightToggle()
 endfunc
 nnoremap <C-l> :call LimelightToggle()<cr>
 
+" Enables YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/config/ycm_extra_conf.py"
+
 " Status line items in the right hand column.
 " Appended after syntastic hijacking.
 set statusline+=%=
