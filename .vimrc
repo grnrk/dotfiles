@@ -13,8 +13,9 @@ syntax on
 set ignorecase
 set noswapfile
 set lazyredraw
+set ttyfast
 set title
-"set paste
+set paste
 set cursorline
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
@@ -29,10 +30,11 @@ set autoindent
 
 " File extension based settings
 autocmd BufNewFile,BufRead *.py,*.sh
-  \ set tabstop=4
+  \ set paste!
+  \ textwidth=79
+  \ tabstop=4
   \ softtabstop=4
   \ shiftwidth=4
-  \ textwidth=79
 
 autocmd BufNewFile,BufRead *.yaml,*.yml
   \ set tabstop=2
