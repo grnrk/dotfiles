@@ -2,10 +2,20 @@
 
 ## Management
 
-Run; `yadm clone <THIS_REPO>`
+Run; `yadm clone <THIS_REPO> --bootstrap`
 
-### Class configuration
-`yadm config local.class work`
+_No files in the repository may exist locally or clone will fail._
+
+**Set class**
+`yadm config local.class <class>`
+_Only one local class at the time is configurable_
+
+Available classes:
+* work
+
+**Unset class**
+`yadm config local.class ''`
+
 
 ## Git submodules
 
