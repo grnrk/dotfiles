@@ -18,6 +18,9 @@ set title
 set cursorline
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
+" maintain undo history between sessions
+set undofile
+set undodir=~/.vim/undo
 
 " Global tab/indentation
 set tabstop=4
