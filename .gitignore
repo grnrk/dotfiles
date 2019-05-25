@@ -9,3 +9,4 @@
 .mutt/.msg_cache
 .mutt/.cal
 .vim/.netrwhist
+.vim/undo
