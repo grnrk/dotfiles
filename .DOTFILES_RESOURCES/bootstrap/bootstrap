@@ -1,0 +1,20 @@
+#!/bin/bash
+
+HOST=$(hostname)
+LAPTOPS=('' '')
+
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+cd "$HOME"
+
+echo "Init submodules"
+yadm submodule update --recursive --init
+
+# All laptops with i3 should get monitor hotplug.
+
+# All laptops should get X11 config
+
+# symlink bin/* to /usr/local/bin
+
+# All i3 should get systemd i3lock

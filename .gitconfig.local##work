@@ -1,0 +1,7 @@
+[user]
+  name = Göran Eriksson
+  email = goran.eriksson@axis.com
+[http]
+  proxy = http://wwwproxy.se.axis.com:3128
+[https]
+  proxy = http://wwwproxy.se.axis.com:3128

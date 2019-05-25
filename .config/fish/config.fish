@@ -1,5 +1,5 @@
 if not set -q __GIT_PROMPT_DIR
-    set __GIT_PROMPT_DIR ~/.gitprompt
+    set __GIT_PROMPT_DIR ~/.DOTFILES_RESOURCES/gitprompt
 end
 
 # editor
