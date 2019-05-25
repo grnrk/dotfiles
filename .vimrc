@@ -12,6 +12,9 @@ syntax on
 set ignorecase
 set autoindent
 set noswapfile
+" maintain undo history between sessions
+set undofile
+set undodir=~/.vim/undo
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
 
