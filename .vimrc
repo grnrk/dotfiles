@@ -141,6 +141,7 @@ nnoremap <C-l> :call LimelightToggle()<cr>
 
 " Enables YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/config/ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Status line items in the right hand column.
 " Appended after syntastic hijacking.

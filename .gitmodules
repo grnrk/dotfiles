@@ -22,9 +22,9 @@
 [submodule ".vim/bundle/limelight.vim"]
 	path = .vim/bundle/limelight.vim
 	url = https://github.com/junegunn/limelight.vim.git
-[submodule ".DOTFILES_RESOURCES/bin/diff-so-fancy"]
-	path = .DOTFILES_RESOURCES/bin/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule ".DOTFILES_RESOURCES/gitprompt"]
 	path = .DOTFILES_RESOURCES/gitprompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule ".DOTFILES_RESOURCES/bin/nox/diff-so-fancy"]
+	path = .DOTFILES_RESOURCES/bin/nox/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git

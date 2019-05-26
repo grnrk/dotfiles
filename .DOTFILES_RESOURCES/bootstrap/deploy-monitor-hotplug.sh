@@ -1,2 +1,2 @@
 #!/bin/bash
-echo deploy
+echo TODO: deploy monitor hotplug

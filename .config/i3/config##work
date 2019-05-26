@@ -7,6 +7,13 @@
 
 ## auto-start thingies
 
+## work laptop only 
+# Start nextcloud client
+exec --no-startup-id nextcloud-client
+# davmail
+exec --no-startup-id davmail
+## end work laptop only 
+
 # screensaver on after 180s = locked
 exec --no-startup-id xset s 180 180
 exec --no-startup-id xss-lock -- i3lock -n -c 233038
