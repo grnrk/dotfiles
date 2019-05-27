@@ -14,5 +14,8 @@ if [ -n "$CONFIGS" ]; then
     for config in $CONFIGS; do
         cat $config >> $I3_CONFIG
     done
+    if [ "$1" == "reload" ]; then
+        i3-msg reload
+    fi
 fi
 
