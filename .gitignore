@@ -15,6 +15,8 @@
 .config/Signal/
 .config/evolution/
 .config/deluge/
+.config/i3/config
+.config/i3/config.*.bak
 .mutt/.hcache
 .mutt/.msg_cache
 .mutt/.cal
