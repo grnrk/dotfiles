@@ -31,7 +31,7 @@ if [ -n "$DISPLAY" -o -n "$WAYLAND_DISPLAY" ]; then
     $BOOTSTRAP_DIR/install-packages.sh x
     # Ask about offlineimap?
     # IF i3WM
-    if [ "$XDG_CURRENT_DESKTOP" == "i3" ]; then
+    if [ "$XDG_CURRENT_DESKTOP" == "i3" -o "$XDG_CURRENT_DESKTOP" == "i3x" ]; then
         $BOOTSTRAP_DIR/install-bins.sh i3
         $BOOTSTRAP_DIR/install-packages.sh i3
         $BOOTSTRAP_DIR/install-i3-resources.sh
