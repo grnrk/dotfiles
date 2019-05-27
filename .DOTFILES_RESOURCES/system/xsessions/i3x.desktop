@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=i3x
+Comment=improved dynamic tiling window manager
+Exec=i3-exec-wrapper
+TryExec=i3-exec-wrapper
+Type=Application
+X-LightDM-DesktopName=i3x
+DesktopNames=i3x
+Keywords=tiling;wm;windowmanager;window;manager;

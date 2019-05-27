@@ -1,0 +1,4 @@
+#!/bin/bash
+
+i3-compile-config
+exec /usr/bin/i3
