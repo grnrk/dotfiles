@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This file is distributed by yadm, changes may be overwritten.
+
+i3-compile-config
+exec /usr/bin/i3

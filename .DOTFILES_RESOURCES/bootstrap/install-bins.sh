@@ -20,5 +20,11 @@ echo Linking bins from $SRC_BIN_DIR to $DST_BIN_DIR
 
 # Symlink executables to /usr/local/bin.                                                                           
 for bin in $SRC_BIN_DIR_BINS; do
-    sudo ln -sf $bin $DST_BIN_DIR/$(basename $bin)
+	if [[ "$bin" =~ \.install$ ]]; then
+		bin_stripped=$(echo $bin | sed 's/\.install//')
+		sudo install -o root -g staff -m 755 $bin \
+		$DST_BIN_DIR/$(basename $bin_stripped)
+	else
+		sudo ln -sf $bin $DST_BIN_DIR/$(basename $bin)
+	fi
 done
