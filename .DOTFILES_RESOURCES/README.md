@@ -33,7 +33,7 @@ This directory holds everything that is related to dotfiles configuration and/or
   * **nox** - Bins that should be available on _all_ systems.
   * **x**   - Bins for any computer with a display.
 
-Files in these directories may be appended with an ending of _.install_ to be copied instead of symlinked.
+Files in the bin directory may be appended with an ending of _.install_ to be copied instead of symlinked.
 
 
 * **/bootstrap** - Scripts executed from .yadm/bootstrap.
