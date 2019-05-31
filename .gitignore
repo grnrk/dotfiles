@@ -17,6 +17,7 @@
 .config/deluge/
 .config/i3/config
 .config/i3/config.*.bak
+.config/i3status/config
 .mutt/.hcache
 .mutt/.msg_cache
 .mutt/.cal
