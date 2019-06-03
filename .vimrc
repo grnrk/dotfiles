@@ -33,13 +33,17 @@ set autoindent
 " File extension based settings
 autocmd BufNewFile,BufRead *.py,*.sh
   \ set paste!
+  \ expandtab
+  \ autoindent
   \ textwidth=79
   \ tabstop=4
   \ softtabstop=4
   \ shiftwidth=4
 
 autocmd BufNewFile,BufRead *.yaml,*.yml
-  \ set tabstop=2
+  \ set expandtab
+  \ autoindent
+  \ tabstop=2
   \ softtabstop=2
   \ shiftwidth=2
 
