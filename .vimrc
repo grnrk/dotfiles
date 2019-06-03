@@ -9,6 +9,8 @@ execute pathogen#infect()
 " and for tab settings below
 filetype plugin indent on
 
+" set <Leader> to comma
+let mapleader=","
 syntax on
 set ignorecase
 set noswapfile
@@ -78,6 +80,11 @@ nmap <silent> <C-A-Up> :wincmd K<CR>
 nmap <silent> <C-A-Down> :wincmd J<CR>
 nmap <silent> <C-A-Left> :wincmd H<CR>
 nmap <silent> <C-A-Right> :wincmd L<CR>
+" window resize keybindings
+nmap <silent> <Leader>> :vertical resize +10<CR>
+nmap <silent> <Leader>< :vertical resize -10<CR>
+nmap <silent> <Leader>+ :resize +10<CR>
+nmap <silent> <Leader>- :resize -10<CR>
 
 " disable mouse
 set mouse-=a
