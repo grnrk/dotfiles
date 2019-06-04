@@ -1,4 +1,2 @@
 # Start nextcloud client
 exec --no-startup-id nextcloud-client
-# davmail
-exec --no-startup-id davmail
