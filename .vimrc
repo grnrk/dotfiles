@@ -18,6 +18,7 @@ set lazyredraw
 set ttyfast
 set title
 set paste
+set pastetoggle=<Leader>p
 set cursorline
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
@@ -46,6 +47,11 @@ autocmd BufNewFile,BufRead *.yaml,*.yml
   \ tabstop=2
   \ softtabstop=2
   \ shiftwidth=2
+
+" limit textwidth for git commit edit message
+autocmd BufNewFile,BufRead COMMIT_EDITMSG
+  \ set paste!
+  \ textwidth=72
 
 " default to hybrid line numbers
 set number
