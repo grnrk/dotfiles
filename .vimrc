@@ -172,4 +172,6 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 " Line number, line column
 set statusline+=\ %l,%c
-
+" Colors for statuslines, current resp. non-current. To hilight active window.
+hi StatusLine ctermbg=11 cterm=bold gui=bold
+hi StatusLineNC ctermbg=8 cterm=none gui=none
