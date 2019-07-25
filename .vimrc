@@ -31,6 +31,10 @@ set tabstop=4
 set expandtab
 set autoindent
 
+" Tab completion + status bar display
+"set wildmode=longest,list,full
+set wildmenu
+
 " File extension based settings
 autocmd BufNewFile,BufRead *.py,*.sh
   \ set paste!
