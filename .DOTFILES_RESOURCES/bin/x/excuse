@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+import requests
+import random
+
+URL = 'http://pages.cs.wisc.edu/~ballard/bofh/excuses'
+
+excuses = requests.get(URL).text.split('\n')
+index = random.randrange(0, len(excuses))
+print(excuses[index])
