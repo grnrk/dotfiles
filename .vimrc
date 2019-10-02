@@ -40,7 +40,7 @@ autocmd BufNewFile,BufRead *.py,*.sh
   \ set paste!
   \ expandtab
   \ autoindent
-  \ textwidth=79
+  \ textwidth=100
   \ tabstop=4
   \ softtabstop=4
   \ shiftwidth=4
