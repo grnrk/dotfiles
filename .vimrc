@@ -140,6 +140,7 @@ let g:syntastic_mode_map = {
 " Set default python checker, flake8 = PEP8 + pyflakes
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_sh_checkers = ['shellcheck']
 " Toggle syntasticCheck
 nnoremap <C-s> :call SyntasticToggleMode()<cr>
 

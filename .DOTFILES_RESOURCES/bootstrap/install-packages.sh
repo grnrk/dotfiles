@@ -31,6 +31,7 @@ case $1 in
 			'yamllint'
 			'pandoc'
 			'texlive-xetex'
+            'shellcheck'
 			)
 	;;
 	*)
