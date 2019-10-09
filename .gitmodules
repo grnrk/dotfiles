@@ -28,3 +28,12 @@
 [submodule ".DOTFILES_RESOURCES/bin/nox/diff-so-fancy"]
 	path = .DOTFILES_RESOURCES/bin/nox/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule ".vim/bundle/SimpylFold"]
+	path = .vim/bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule ".vim/bundle/indentpython"]
+	path = .vim/bundle/indentpython
+	url = https://github.com/vim-scripts/indentpython.vim.git
+[submodule "/home/gorane/.vim/bundle/nerdtree"]
+	path = /home/gorane/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

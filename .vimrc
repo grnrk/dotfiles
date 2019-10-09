@@ -8,7 +8,6 @@ execute pathogen#infect()
 " needed for pathogen to be able to work magic
 " and for tab settings below
 filetype plugin indent on
-
 " set <Leader> to comma
 let mapleader=","
 syntax on
@@ -30,7 +29,12 @@ set undodir=~/.vim/undo
 set tabstop=4
 set expandtab
 set autoindent
-
+" Open documents with folds open.
+set nofoldenable
+" Enable toggle folding/fold
+nnoremap <space> za
+" Enable toggle all folding
+nnoremap <C-f> zi
 " Tab completion + status bar display
 "set wildmode=longest,list,full
 set wildmenu
@@ -107,7 +111,6 @@ set mouse-=a
 set laststatus=2
 " Open tabs when switching buffers. to the existing tab if the buffer is open, or creating a new one if not
 set switchbuf=usetab,newtab
-
 " COLORS!
 " enable 256 colors
 set t_Co=256
@@ -115,6 +118,11 @@ set t_Co=256
 " MOLOKAI
 let g:molokai_original = 1
 colorscheme molokai
+
+" NERDTree
+map <C-t> :NERDTreeToggle<CR>
+" Exit vim if the only window left is NERDTree.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " SOLARIZED
 "set background=light
