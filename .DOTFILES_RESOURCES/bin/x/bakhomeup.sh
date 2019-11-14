@@ -32,4 +32,6 @@ rsync -qaz --delete --inplace --backup \
 --exclude="dotfiles/" \
 --exclude="Nextcloud/" \
 --exclude=".aws/" \
+--exclude=".yadm/" \
+--exclude=".vault-token" \
 $src ${trg}/full/
