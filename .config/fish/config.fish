@@ -2,9 +2,16 @@ if not set -q __GIT_PROMPT_DIR
     set __GIT_PROMPT_DIR ~/.DOTFILES_RESOURCES/gitprompt
 end
 
+# Base16 Shell
+#if status --is-interactive
+#    set BASE16_SHELL "$HOME/.config/base16-shell/"
+#    source "$BASE16_SHELL/profile_helper.fish"
+#end
+
 # editor
 set -Ux EDITOR vim
-
+# vault
+set -gx VAULT_ADDR https://vault.se.axis.com
 # path
 set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/git/SA/axis-connect/environment/compiled_deploy/_deploytools $PATH
 
