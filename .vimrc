@@ -24,6 +24,8 @@ set formatoptions-=cro
 " maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undo
+" This is turned off because plugin lightline provides the same info.
+set noshowmode
 
 " Global tab/indentation
 set tabstop=4
