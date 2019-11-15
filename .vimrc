@@ -177,16 +177,16 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Status line items in the right hand column.
 " Appended after syntastic hijacking.
-set statusline+=%=
-set statusline+=%#CursorColumn#
+"set statusline+=%=
+"set statusline+=%#CursorColumn#
 " File type
-set statusline+=\ %y         
+"set statusline+=\ %y         
 " File encoding
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 " File format
-set statusline+=\[%{&fileformat}\]
+"set statusline+=\[%{&fileformat}\]
 " Line number, line column
-set statusline+=\ %l,%c
+"set statusline+=\ %l,%c
 " Colors for statuslines, current resp. non-current. To hilight active window.
-hi StatusLine ctermbg=11 cterm=bold gui=bold
-hi StatusLineNC ctermbg=8 cterm=none gui=none
+"hi StatusLine ctermbg=green cterm=bold gui=bold
+"hi StatusLineNC ctermbg=green cterm=none gui=none
