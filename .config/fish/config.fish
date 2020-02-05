@@ -13,7 +13,7 @@ set -Ux EDITOR vim
 # vault
 set -gx VAULT_ADDR https://vault.se.axis.com
 # path
-set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/git/SA/axis-connect/environment/compiled_deploy/_deploytools $PATH
+set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/.local/bin $PATH
 
 set -gx TERM xterm-256color
 # Colors

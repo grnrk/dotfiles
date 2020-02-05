@@ -6,7 +6,7 @@
   co = checkout
   br = branch
   cp = cherry-pick
-  amend = commit --amend
+  ca = commit --amend
   rlog = log --pretty=oneline --abbrev-commit --graph --decorate
   plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   unadd = reset --mixed HEAD
