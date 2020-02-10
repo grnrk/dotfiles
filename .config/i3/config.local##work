@@ -1,2 +1,6 @@
+
+### START config.local##work ###
 # Start nextcloud client
 exec --no-startup-id nextcloud-client
+### END config.local##work ###
+
