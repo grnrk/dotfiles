@@ -43,6 +43,7 @@ font pango:Sans 8
 # default new window behaviour
 workspace_layout stacking
 
+popup_during_fullscreen smart
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -69,14 +70,14 @@ bindsym $mod+Shift+q kill
 # NOTE: dmenu binary is replaced with rofi, original dmenu is /usr/bin/dmenu.BAK 
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# rofi cmd wrapped in sh because of parsing bug.
-bindsym $mod+d exec rofi-dmenu.sh
+# Use # as separator since i3 dislikes commas in exec commands.
+bindsym $mod+d exec rofi -modi "drun#run#ssh" -show drun
 
 ## calculator
 bindsym $mod+c exec rofi -location 6 -show calc -modi "calc:qalc -t"
 # window switching with rofi
-#bindsym $mod+Tab exec rofi -switchers 'run,window' -show run
-bindsym $mod+Tab exec rofi -modi 'window' -show window
+#bindsym $mod+Tab exec rofi -switchers 'run#window' -show run
+bindsym $mod+Tab exec rofi -modi 'window' -show window -show-icons
 
 # ALT Button
 #bindcode 64 exec rofi -modi 'window' -show window
@@ -108,6 +109,8 @@ bindsym $mod+Shift+Right move right
 # Move entire workspaces 
 bindsym $mod+ctrl+Shift+Left move workspace to output left
 bindsym $mod+ctrl+Shift+Right move workspace to output right
+# Move workspace one step to the right
+bindsym $mod+x move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -137,28 +140,44 @@ bindsym $mod+a focus parent
 
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Default Workspace names and application assignment
+# If we use "numbered" workspaces with names, any "move to workspace" operations
+# must use the number keyword as well. (ie: move to workspace number n)
+#
+# assign is preferred if it works with the application
+# https://i3wm.org/docs/userguide.html#assign_workspace
+set $ws1 "1: chat" 
+set $ws2 "2: music" 
+set $ws3 "3: mail" 
+#assign [class="Spotify"] $ws5
+#for_window [class="Spotify"] move to workspace $ws5; workspace number 5
+for_window [class="^Spotify$"] move to workspace $ws2; workspace number 2; move workspace to output primary
+for_window [class="^Signal$"] move to workspace $ws1; workspace number 1; move workspace to output primary
+for_window [class="^Microsoft Teams - Preview$"] move to workspace $ws1; workspace number 1; move workspace to output primary
+for_window [class="^Evolution$"] move to workspace $ws3; workspace number 3; move workspace to output DP-1-1 primary
 
 # reload the configuration file
 bindsym $mod+Shift+c exec "i3-compile-config && i3-msg reload"
