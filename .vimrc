@@ -10,7 +10,6 @@ execute pathogen#infect()
 filetype plugin indent on
 " set <Leader> to comma
 let mapleader=","
-syntax on
 set ignorecase
 set noswapfile
 set lazyredraw
@@ -153,6 +152,12 @@ let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_sh_checkers = ['shellcheck']
 " Toggle syntasticCheck
 nnoremap <C-s> :call SyntasticToggleMode()<cr>
+
+" SYNTAX HIGHLIGHTING
+" General, built in:
+syntax on
+" python:
+let g:python_highlight_all = 1
 
 " Pandoc
 " Enable pandoc for these filetypes
