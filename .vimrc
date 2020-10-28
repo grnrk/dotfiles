@@ -125,11 +125,6 @@ map <C-t> :NERDTreeToggle<CR>
 " Exit vim if the only window left is NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" SOLARIZED
-"set background=light
-"let g:solarized_termcolors=256
-"colorscheme solarized
-
 " SYNTASTIC SETTINGS
 " recommended defaults
 set statusline+=%#warningmsg#
@@ -155,9 +150,8 @@ nnoremap <C-s> :call SyntasticToggleMode()<cr>
 
 " SYNTAX HIGHLIGHTING
 " General, built in:
-syntax on
-" python:
-let g:python_highlight_all = 1
+" syntax on
+" We use vim-polygot now...
 
 " Pandoc
 " Enable pandoc for these filetypes
@@ -169,29 +163,6 @@ let g:pandoc#modules#disabled = ["folding"]
 " Disable spellcheck
 let g:pandoc#spell#enabled = 0
 
-" Limelight
-let g:limelight_conceal_ctermfg = 'gray'
-function! LimelightToggle()
-    Limelight!!
-endfunc
-nnoremap <C-l> :call LimelightToggle()<cr>
-
 " Enables YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/config/ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
-
-" Status line items in the right hand column.
-" Appended after syntastic hijacking.
-"set statusline+=%=
-"set statusline+=%#CursorColumn#
-" File type
-"set statusline+=\ %y         
-" File encoding
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-" File format
-"set statusline+=\[%{&fileformat}\]
-" Line number, line column
-"set statusline+=\ %l,%c
-" Colors for statuslines, current resp. non-current. To hilight active window.
-"hi StatusLine ctermbg=green cterm=bold gui=bold
-"hi StatusLineNC ctermbg=green cterm=none gui=none

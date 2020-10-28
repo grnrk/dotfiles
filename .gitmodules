@@ -1,15 +1,9 @@
 [submodule ".vim/bundle/vim-pathogen"]
 	path = .vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/vim-puppet"]
-	path = .vim/bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet.git
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
@@ -19,9 +13,6 @@
 [submodule ".vim/bundle/vim-pandoc"]
 	path = .vim/bundle/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
-[submodule ".vim/bundle/limelight.vim"]
-	path = .vim/bundle/limelight.vim
-	url = https://github.com/junegunn/limelight.vim.git
 [submodule ".DOTFILES_RESOURCES/gitprompt"]
 	path = .DOTFILES_RESOURCES/gitprompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
@@ -31,9 +22,6 @@
 [submodule ".vim/bundle/SimpylFold"]
 	path = .vim/bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule ".vim/bundle/indentpython"]
-	path = .vim/bundle/indentpython
-	url = https://github.com/vim-scripts/indentpython.vim.git
 [submodule "/home/gorane/.vim/bundle/nerdtree"]
 	path = /home/gorane/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -43,9 +31,6 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/Jenkinsfile-vim-syntax"]
-	path = .vim/bundle/Jenkinsfile-vim-syntax
-	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
-[submodule ".vim/bundle/python-syntax"]
-	path = .vim/bundle/python-syntax
-	url = https://github.com/vim-python/python-syntax.git
+[submodule ".vim/bundle/vim-polyglot"]
+	path = .vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
