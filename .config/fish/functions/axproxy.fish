@@ -24,6 +24,11 @@ function axproxy
         for PROXY_VAR in $PROXY_VARS
             set -U -e $PROXY_VAR
         end
+    case status
+        for PROXY_VAR in $PROXY_VARS
+            set -S $PROXY_VAR
+        end
+        set -S no_proxy
     case '*'
         echo $HELP
     end
