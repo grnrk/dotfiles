@@ -1,6 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ANSIBLE_PIPELINING:True
+SETUVAR --export ANSIBLE_VAULT_PASSWORD_FILE:/home/gorane/\x2eansible_vault_pass
 SETUVAR --export EDITOR:vim
+SETUVAR --export --path PATH:/sbin\x1e/usr/sbin\x1e/usr/local/sbin\x1e/home/gorane/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/games\x1e/usr/games\x1e/var/cfengine/bin
+SETUVAR --export TERM:xterm\x2d256color
+SETUVAR --export VAULT_ADDR:https\x3a//vault\x2ese\x2eaxis\x2ecom
 SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
