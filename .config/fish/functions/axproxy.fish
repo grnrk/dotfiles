@@ -13,17 +13,14 @@ function axproxy
     switch $argv[1]
     case enable
         for PROXY_VAR in $PROXY_VARS
-            if not set -q $PROXY_VAR
-                set -U -x $PROXY_VAR $PROXY
-            end
+            set -U -x $PROXY_VAR $PROXY
         end
-        if not set -q no_proxy
-            set -U -x no_proxy $NO_PROXY
-        end
+        set -U -x no_proxy $NO_PROXY
     case disable
         for PROXY_VAR in $PROXY_VARS
             set -U -e $PROXY_VAR
         end
+        set -U -e no_proxy
     case status
         for PROXY_VAR in $PROXY_VARS
             set -S $PROXY_VAR
