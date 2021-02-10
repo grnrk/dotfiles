@@ -34,4 +34,5 @@ rsync -qaz --delete --inplace --backup \
 --exclude=".aws/" \
 --exclude=".yadm/" \
 --exclude=".vault-token" \
+--exclude=".awx-env" \
 $src ${trg}/full/
