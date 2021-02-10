@@ -9,17 +9,16 @@ end
 #end
 
 # vault
-set -Ux VAULT_ADDR https://vault.se.axis.com
+set -gx VAULT_ADDR https://vault.se.axis.com
 # Ansible
-set -Ux ANSIBLE_PIPELINING True
-set -Ux ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible_vault_pass
-
+set -gx ANSIBLE_PIPELINING True
+set -gx ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible_vault_pass
 # editor
-set -Ux EDITOR vim
+set -gx EDITOR vim
 # path
-set -Ux PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/.local/bin $PATH
-
-set -Ux TERM xterm-256color
+set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/.local/bin $PATH
+# term
+set -gx TERM xterm-256color
 # Colors
 # Reset
 set ResetColor (set_color normal)       # Text Reset
