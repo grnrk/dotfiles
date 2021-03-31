@@ -113,7 +113,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: DejaVu Sans Mono
-    family: Courier New
+    family: Liberation Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Book (Book == Regular for DejaVu..)
@@ -168,7 +168,6 @@ font:
   glyph_offset:
     x: 0
     y: -1
-  # NOTE: The glyph offset is only set to decrease the floatiness of underline when using Courier New. /gorane 
 
   # Thin stroke font rendering (macOS only)
   #
