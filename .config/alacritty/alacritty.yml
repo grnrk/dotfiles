@@ -436,8 +436,8 @@ cursor:
 #   - (Windows) powershell
 shell:
   program: /usr/bin/fish
-#  args:
-#    - --login
+  args:
+    - --login
 
 # Startup directory
 #
