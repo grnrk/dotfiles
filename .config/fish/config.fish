@@ -17,8 +17,9 @@ set -gx ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible_vault_pass
 set -gx EDITOR vim
 # path
 set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/.local/bin $PATH
-# term
-set -gx TERM xterm-256color
+# term 
+# Let TERM be set by resp. terminal
+#set -gx TERM xterm-256color
 # Colors
 # Reset
 set ResetColor (set_color normal)       # Text Reset
