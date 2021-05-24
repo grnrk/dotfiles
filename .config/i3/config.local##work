@@ -2,5 +2,8 @@
 ### START config.local##work ###
 # Start nextcloud client
 exec --no-startup-id nextcloud-client
+
+# Floating windows at app start
+for_window [class="^PulseUI$"] floating enable
 ### END config.local##work ###
 
