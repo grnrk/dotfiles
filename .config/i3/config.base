@@ -262,6 +262,9 @@ bindsym $mod+ctrl+h move scratchpad
 ## Unhide scratchpad
 bindsym $mod+ctrl+u scratchpad show
 
+### Player control ###
+# Toggle spotify play/pause
+bindsym $mod+p exec playerctl -p spotify play-pause
 
 ### VOLUME CONTROL ###
 bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 2dB+ unmute
