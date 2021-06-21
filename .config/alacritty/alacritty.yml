@@ -186,7 +186,10 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors https://terminal.sexy
+# Colors:
+# https://terminal.sexy
+# https://github.com/alacritty/alacritty/wiki/Color-schemes
+
 colors:
   # Default colors
   primary:
