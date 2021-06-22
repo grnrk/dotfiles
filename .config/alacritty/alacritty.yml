@@ -218,6 +218,11 @@ colors:
     cyan:    '0x37c3d6'
     white:   '0xf9f9f9'
 
+  # Cursor colors
+  cursor:
+    text: CellBackground
+    cursor: '#eeeeee'
+
 # Colors (Tomorrow Night)
 #colors:
   # Default colors
