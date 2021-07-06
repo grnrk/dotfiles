@@ -206,3 +206,6 @@ VirtualBox VMs/
 .zhistory
 .zshenv
 .zshrc
+.spacemacs*
+.config/ReText project/
+.emacs.d/
