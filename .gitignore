@@ -209,3 +209,4 @@ VirtualBox VMs/
 .spacemacs*
 .config/ReText project/
 .emacs.d/
+.GlobalProtect/
