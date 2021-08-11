@@ -56,7 +56,9 @@ run_watch DHCP {
 
 path_exists VPN {
 	# path exists when a VPN tunnel launched by nmcli/nm-applet is active
-	path = "/proc/sys/net/ipv4/conf/tun0"
+	#path = "/proc/sys/net/ipv4/conf/tun0"
+	# path exists when a globalprotect VPN tunnel is active
+	path = "/proc/sys/net/ipv4/conf/gpd0"
 }
 
 tztime local {
