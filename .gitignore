@@ -210,3 +210,5 @@ VirtualBox VMs/
 .config/ReText project/
 .emacs.d/
 .GlobalProtect/
+.config/ibus/
+.config/monitors-v1-backup.xml
