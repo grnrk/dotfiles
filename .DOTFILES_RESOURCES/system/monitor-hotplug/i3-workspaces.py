@@ -22,7 +22,7 @@ if __name__ == '__main__':
         show_help()
 
     if not os.path.exists(I3_SAVE_DIR):
-        os.makedirs(I3_SAVE_DIR, 0755)
+        os.makedirs(I3_SAVE_DIR, 0o755)
 
     try:
         # Connect to i3 session
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     if sys.argv[1] == 'save':
         try:
-            workspaces = i3.get_workspaces()
+            workspaces = [ws.ipc_data for ws in i3.get_workspaces()]
             with open(WS_SAVE_FILE, 'wb') as f:
                 pickle.dump(workspaces, f)
         except:
