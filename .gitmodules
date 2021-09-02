@@ -10,9 +10,6 @@
 [submodule ".vim/bundle/molokai"]
 	path = .vim/bundle/molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule ".vim/bundle/vim-pandoc"]
-	path = .vim/bundle/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule ".DOTFILES_RESOURCES/gitprompt"]
 	path = .DOTFILES_RESOURCES/gitprompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
@@ -22,8 +19,8 @@
 [submodule ".vim/bundle/SimpylFold"]
 	path = .vim/bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "/home/gorane/.vim/bundle/nerdtree"]
-	path = /home/gorane/.vim/bundle/nerdtree
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/lightline.vim"]
 	path = .vim/bundle/lightline.vim
