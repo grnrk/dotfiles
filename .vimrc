@@ -83,7 +83,7 @@ function! WhiteSpaceToggle()
     set list !
   else
     set list
-    set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+    set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵,space:⎵
   endif
 endfunc
 
@@ -139,7 +139,7 @@ let g:syntastic_check_on_wq = 0
 "" modemap settings
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "active_filetypes": ["puppet", "python", "sh", "yaml"],
+    \ "active_filetypes": ["puppet", "python", "sh", "yaml", "go"],
     \ "passive_filetypes": ["ruby", "php"] }
 " Set default python checker, flake8 = PEP8 + pyflakes
 let g:syntastic_python_checkers = ['flake8', 'mypy']
