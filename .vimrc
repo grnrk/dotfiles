@@ -153,16 +153,6 @@ nnoremap <C-s> :call SyntasticToggleMode()<cr>
 " syntax on
 " We use vim-polygot now...
 
-" Pandoc
-" Enable pandoc for these filetypes
-let g:pandoc#filetypes#handled = ["pandoc", "markdown", "extra", "json"]
-" Use markdown syntax (instead of pandoc-markdown) for markdown.
-let g:pandoc#filetypes#pandoc_markdown = 0
-" Disable folding
-let g:pandoc#modules#disabled = ["folding"]
-" Disable spellcheck
-let g:pandoc#spell#enabled = 0
-
 " Enables YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/config/ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
