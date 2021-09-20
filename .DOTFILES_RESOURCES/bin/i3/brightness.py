@@ -10,7 +10,7 @@ if len(args) != 2:
 bright_file = '/sys/class/backlight/intel_backlight/brightness'
 cmd = args[1]
 max_bright = 7500  # Highest possible value of bright_file
-min_bright = 50  # Lowest possible value of bright_file
+min_bright = 1  # Lowest possible value of bright_file
 
 std_level_change = 700
 lo_level_change = 100
