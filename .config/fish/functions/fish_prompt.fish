@@ -1,5 +1,6 @@
 function fish_prompt
-	if not set -q __fish_prompt_hostname
+
+  if not set -q __fish_prompt_hostname
     set -g __fish_prompt_hostname (set_color red)(hostname|cut -d . -f 1)
   end
 
@@ -8,7 +9,7 @@ function fish_prompt
   end
 
   if not set -q __fish_prompt_user
-    set -g __fish_prompt_user (set_color ffffff)(whoami)
+    set -g __fish_prompt_user (set_color f0f0f0)(whoami)
   end
 
   switch $USER
@@ -39,7 +40,7 @@ function fish_prompt
     set -e __CURRENT_GIT_STATUS
     set gitstatus "$__GIT_PROMPT_DIR/gitstatus.py"
 
-    set _GIT_STATUS (python $gitstatus)
+    set _GIT_STATUS (python3 $gitstatus)
     set __CURRENT_GIT_STATUS $_GIT_STATUS
 
     set __CURRENT_GIT_STATUS_PARAM_COUNT (count $__CURRENT_GIT_STATUS)
