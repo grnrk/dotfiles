@@ -40,8 +40,6 @@ Files in the bin directory may be appended with an ending of _.install_ to be co
 
 * **/etc** - Configuration files for /etc.
 
-* **/gitprompt** - The path to this git submodule is referenced directly to from config.fish.
-
 * **/system** - System configuration items.
 
 

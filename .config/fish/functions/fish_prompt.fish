@@ -1,103 +1,27 @@
-function fish_prompt
+function fish_prompt --description 'Write out the prompt'
+    set -l last_pipestatus $pipestatus
+    set -l last_status $status
+    set -l normal (set_color normal)
 
-  if not set -q __fish_prompt_hostname
-    set -g __fish_prompt_hostname (set_color red)(hostname|cut -d . -f 1)
-  end
-
-  if not set -q __fish_prompt_normal
-    set -g __fish_prompt_normal (set_color normal)
-  end
-
-  if not set -q __fish_prompt_user
-    set -g __fish_prompt_user (set_color f0f0f0)(whoami)
-  end
-
-  switch $USER
-
-    case root
-
-    if not set -q __fish_prompt_cwd
-      if set -q fish_color_cwd_root
-        set -g __fish_prompt_cwd (set_color $fish_color_cwd_root)
-      else
-        set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-      end
+    # Color the prompt differently when we're root
+    set -l color_cwd $fish_color_cwd
+    set -l prefix
+    set -l suffix '>'
+    if contains -- $USER root toor
+        if set -q fish_color_cwd_root
+            set color_cwd $fish_color_cwd_root
+        end
+        set suffix '#'
     end
 
-    echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" '# '
-
-    case '*'
-
-    if not set -q __fish_prompt_cwd
-      set -g __fish_prompt_cwd (set_color $fish_color_cwd)
+    # If we're running via SSH, change the host color.
+    set -l color_host $fish_color_host
+    if set -q SSH_TTY
+        set color_host $fish_color_host_remote
     end
 
-    echo -n -s "$__fish_prompt_user" @ "$__fish_prompt_hostname" ' ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" '> '
+    # Write pipestatus
+    set -l prompt_status (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
 
-  end
-
-
-    set -e __CURRENT_GIT_STATUS
-    set gitstatus "$__GIT_PROMPT_DIR/gitstatus.py"
-
-    set _GIT_STATUS (python3 $gitstatus)
-    set __CURRENT_GIT_STATUS $_GIT_STATUS
-
-    set __CURRENT_GIT_STATUS_PARAM_COUNT (count $__CURRENT_GIT_STATUS)
-
-    if not test "0" -eq $__CURRENT_GIT_STATUS_PARAM_COUNT
-        set GIT_BRANCH $__CURRENT_GIT_STATUS[1]
-        set GIT_REMOTE "$__CURRENT_GIT_STATUS[2]"
-        if contains "." "$GIT_REMOTE"
-            set -e GIT_REMOTE
-        end
-        set GIT_STAGED $__CURRENT_GIT_STATUS[3]
-        set GIT_CONFLICTS $__CURRENT_GIT_STATUS[4]
-        set GIT_CHANGED $__CURRENT_GIT_STATUS[5]
-        set GIT_UNTRACKED $__CURRENT_GIT_STATUS[6]
-        set GIT_STASHED $__CURRENT_GIT_STATUS[7]
-        set GIT_CLEAN $__CURRENT_GIT_STATUS[8]
-    end
-
-    if test -n "$__CURRENT_GIT_STATUS"
-        set STATUS " $GIT_PROMPT_PREFIX$GIT_PROMPT_BRANCH$GIT_BRANCH$ResetColor"
-
-        if set -q GIT_REMOTE
-            set STATUS "$STATUS$GIT_PROMPT_REMOTE$GIT_REMOTE$ResetColor"
-        end
-
-        set STATUS "$STATUS$GIT_PROMPT_SEPARATOR"
-
-        if [ $GIT_STAGED != "0" ]
-            set STATUS "$STATUS$GIT_PROMPT_STAGED$GIT_STAGED$ResetColor"
-        end
-
-        if [ $GIT_CONFLICTS != "0" ]
-            set STATUS "$STATUS$GIT_PROMPT_CONFLICTS$GIT_CONFLICTS$ResetColor"
-        end
-
-        if [ $GIT_CHANGED != "0" ]
-            set STATUS "$STATUS$GIT_PROMPT_CHANGED$GIT_CHANGED$ResetColor"
-        end
-
-        if [ "$GIT_UNTRACKED" != "0" ]
-            set STATUS "$STATUS$GIT_PROMPT_UNTRACKED$GIT_UNTRACKED$ResetColor"
-        end
-        
-        if [ "$GIT_STASHED" != "0" ]
-            set STATUS "$STATUS$GIT_PROMPT_STASHED$GIT_STASHED$ResetColor"
-        end
-
-        if [ "$GIT_CLEAN" = "1" ]
-            set STATUS "$STATUS$GIT_PROMPT_CLEAN"
-        end
-
-        set STATUS "$STATUS$ResetColor$GIT_PROMPT_SUFFIX"
-
-        set PS1 "$PROMPT_START$STATUS$PROMPT_END"
-    else
-        set PS1 "$PROMPT_START$PROMPT_END"
-    end
-
-    echo -e $PS1
+    echo -n -s (set_color $fish_color_user) "$USER" $normal @ (set_color $color_host) (prompt_hostname) $normal ' ' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal $prompt_status $suffix " "
 end
