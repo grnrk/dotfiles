@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/vim-polyglot"]
 	path = .vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/bundle/pear-tree"]
+	path = .vim/bundle/pear-tree
+	url = https://github.com/tmsvg/pear-tree
