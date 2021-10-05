@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/gorane/Pictures/wallpapers/active_i3_wallpaper.png' 
