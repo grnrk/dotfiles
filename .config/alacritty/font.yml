@@ -1,0 +1,16 @@
+font:
+  normal:
+    family: monospace
+    # Definition of monospace (or other family name) preferences set in ~/.config/fontconfig/fonts.conf
+    # Use `fc-match -s monospace` to see the load order.
+    # The reason for defining monospace prefs, rather than setting primary mono type only directly here,
+    # is to be able to bump Emoji fonts for proper emoji rendering...
+    # See: https://github.com/alacritty/alacritty/issues/153
+    #      https://github.com/alacritty/alacritty/issues/153#issuecomment-620571405
+  size: 10.0
+  offset:
+    x: 0
+    y: 2
+  glyph_offset:
+    x: 0
+    y: 0

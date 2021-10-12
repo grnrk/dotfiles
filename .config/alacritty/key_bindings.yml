@@ -1,0 +1,7 @@
+key_bindings:
+  - { key: PageUp,    mods: Control|Shift,  mode: ~Alt,        action: ScrollPageUp,  }
+  - { key: PageDown,  mods: Control|Shift,  mode: ~Alt,        action: ScrollPageDown }
+  - { key: Home,      mods: Control|Shift,  mode: ~Alt,        action: ScrollToTop,   }
+  - { key: End,       mods: Control|Shift,  mode: ~Alt,        action: ScrollToBottom }
+  - { key: Up,        mods: Control|Shift,  mode: ~Alt,        action: ScrollLineUp   }
+  - { key: Down,      mods: Control|Shift,  mode: ~Alt,        action: ScrollLineDown }
