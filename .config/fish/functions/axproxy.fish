@@ -2,7 +2,7 @@ function axproxy
 
     set SCOPE -U
     set PROXY "http://wwwproxy.se.axis.com:3128"
-    set NO_PROXY "localhost,127.0.0.1,localaddress,.localdomain.com,.se.axis.com,seconnect2.axis.com,connect2.axis.com,vpncloud.axis.com,.gpcloudservice.com"
+    set NO_PROXY "localhost,127.0.0.1,.se.axis.com,vpncloud.axis.com,.gpcloudservice.com"
     set PROXY_VARS HTTP_PROXY HTTPS_PROXY http_proxy https_proxy
     set HELP "Usage: axproxy enable|disable|status [SCOPE]
 
