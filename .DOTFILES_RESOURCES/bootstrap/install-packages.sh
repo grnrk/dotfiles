@@ -16,6 +16,7 @@ case $1 in
 			'scrot'
 			'xss-lock'
 			'network-manager-gnome'
+            'brightness-udev'
 			)
 	;;
 	"x")
