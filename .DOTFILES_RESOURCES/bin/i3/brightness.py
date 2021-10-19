@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+"""
+To run this script as a non-root user, install package brightness-udev
+and add the user to the group video.
+"""
+
 import sys
 
 args = sys.argv
