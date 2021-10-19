@@ -266,17 +266,20 @@ bindsym $mod+ctrl+u scratchpad show
 # Toggle spotify play/pause
 bindsym $mod+p exec playerctl -p spotify play-pause
 
-### VOLUME CONTROL ###
+### MEDIA CONTROLS ###
+
+# Volume
 bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 2dB- unmute
 #bindsym XF86AudioMute exec mute-toggle
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-# Sreen brightness controls
-# bug in 16.10/stretch broke xbacklight.. using bright - simple bash thing meanwhile
-# https://bugs.launchpad.net/ubuntu/+source/xbacklight/+bug/1638136
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+# Player
+bindsym XF86AudioPlay exec playerctl play-pause 
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+# Sreen brightness
 bindsym XF86MonBrightnessUp exec brightness.py inc
 bindsym XF86MonBrightnessDown exec brightness.py dec
 
