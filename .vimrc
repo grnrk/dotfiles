@@ -33,9 +33,9 @@ set autoindent
 " Open documents with folds open.
 set nofoldenable
 " Enable toggle folding/fold
-nnoremap <space> za
+nmap <space> za
 " Enable toggle all folding
-nnoremap <C-f> zi
+nmap <C-f> zi
 " Tab completion + status bar display
 "set wildmode=longest,list,full
 set wildmenu
@@ -75,7 +75,7 @@ function! RelNumberToggle()
   endif
 endfunc
 
-nnoremap <C-n> :call RelNumberToggle()<cr>
+nmap <C-n> :call RelNumberToggle()<cr>
 
 " Toggle whitespace visibility
 function! WhiteSpaceToggle()
@@ -87,7 +87,7 @@ function! WhiteSpaceToggle()
   endif
 endfunc
 
-nnoremap <C-w> :call WhiteSpaceToggle()<cr>
+nmap <C-w> :call WhiteSpaceToggle()<cr>
 
 " window navigation rebindings
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -146,13 +146,20 @@ let g:syntastic_python_checkers = ['flake8', 'mypy']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_sh_checkers = ['shellcheck']
 " Toggle syntasticCheck
-nnoremap <C-s> :call SyntasticToggleMode()<cr>
+nmap <C-s> :call SyntasticToggleMode()<cr>
 
 " SYNTAX HIGHLIGHTING
 " General, built in:
 " syntax on
 " We use vim-polygot now...
 
-" Enables YouCompleteMe
+" YouCompleteMe settings
+" Reference: /usr/share/vim-youcompleteme/doc/youcompleteme.txt 
 let g:ycm_global_ycm_extra_conf = "~/.vim/config/ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
+" Turn off doc auto hover
+let g:ycm_auto_hover = ""
+" Ycm keybindings
+nmap gd :YcmCompleter GoTo<CR>
+"nmap gh :YcmCompleter GetDoc<CR>
+nmap gh <plug>(YCMHover)
