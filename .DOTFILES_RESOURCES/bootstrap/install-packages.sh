@@ -22,6 +22,7 @@ case $1 in
 	"x")
 		PACKAGES=(
 			'adapta-gtk-theme'
+            'ddgr'
 			)
 	;;
 	"nox")
