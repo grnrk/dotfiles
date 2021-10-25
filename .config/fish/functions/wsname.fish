@@ -13,9 +13,9 @@ function wsname
         set ws_num (echo $cur_ws | cut -d':' -f1)
         if string match --quiet --regex $ws_num $ws_name
             i3-msg "rename workspace \"$cur_ws\" to \"$ws_num\""
-            return
+        else
+            i3-msg "rename workspace \"$cur_ws\" to \"$ws_num: $ws_name\""
         end
-        i3-msg "rename workspace \"$cur_ws\" to \"$ws_num: $ws_name\""
     else
         i3-msg "rename workspace \"$cur_ws\" to \"$cur_ws: $ws_name\""
     end
