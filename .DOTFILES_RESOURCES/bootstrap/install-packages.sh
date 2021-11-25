@@ -23,6 +23,7 @@ case $1 in
 		PACKAGES=(
 			'adapta-gtk-theme'
             'ddgr'
+            'pavucontrol'
 			)
 	;;
 	"nox")
@@ -34,6 +35,7 @@ case $1 in
 			'pandoc'
 			'texlive-xetex'
             'shellcheck'
+            'fish'
 			)
 	;;
 	*)
@@ -46,6 +48,6 @@ echo Installing packages for $1
 
 for package in ${PACKAGES[@]}; do
     if ! dpkg -l $package &> /dev/null; then
-        sudo apt install $package
+        sudo apt install -yq $package
     fi
 done
