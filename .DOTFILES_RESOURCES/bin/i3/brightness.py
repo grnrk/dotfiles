@@ -6,16 +6,27 @@ and add the user to the group video.
 """
 
 import sys
+import socket
 
 args = sys.argv
 if len(args) != 2:
     print('Arg num errror')
     sys.exit(1)
 
+HOSTNAME = socket.gethostname()
+
 bright_file = '/sys/class/backlight/intel_backlight/brightness'
 cmd = args[1]
-max_bright = 7500  # Highest possible value of bright_file
-min_bright = 1  # Lowest possible value of bright_file
+
+
+# Highest possible value of bright_file
+if HOSTNAME == 'lap5cg1384xxq':
+    max_bright = 19200
+else:
+    max_bright = 7500
+
+# Lowest possible value of bright_file
+min_bright = 1
 
 std_level_change = 700
 lo_level_change = 100
