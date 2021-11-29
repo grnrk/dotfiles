@@ -19,6 +19,8 @@ find ${trg}/incr/ -maxdepth 1 -type d -mtime +$KEEP_DAYS -exec rm -rf {} \;
 
 rsync -qaz --delete --inplace --backup \
 --backup-dir=${trg}/incr/${date} \
+--exclude=".thunderbird/" \
+--exclude=".mozilla/" \
 --exclude="nobackup/" \
 --exclude="VirtualBox*" \
 --exclude="Maildir/" \
