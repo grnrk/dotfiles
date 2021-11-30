@@ -24,6 +24,7 @@ case $1 in
 			'adapta-gtk-theme'
             'ddgr'
             'pavucontrol'
+            'playerctl'
 			)
 	;;
 	"nox")
