@@ -11,7 +11,7 @@ end
 # editor
 set -gx EDITOR vim
 # path
-set -gx PATH /sbin /usr/sbin /usr/local/sbin /home/gorane/.local/bin $PATH
+set -gx PATH /sbin /usr/sbin /usr/local/sbin ~/.local/bin $PATH
 # term 
 # Let TERM be set by resp. terminal
 #set -gx TERM xterm-256color
