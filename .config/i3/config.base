@@ -3,33 +3,29 @@
 # Package and script dependencies are managed in bootstrap scripts under
 # ~/.DOTFILES_RESOURCES/bootstrap
 
-# - gnome-screensaver?
+set $mod Mod4
+set $exec exec --no-startup-id
 
 ## auto-start thingies
 
 # screensaver on after 180s = locked
-exec --no-startup-id xset s 180 180
-exec --no-startup-id xss-lock -- i3lock -n -c 233038
+$exec xset s 180 180
+$exec xss-lock -- i3lock -n -c 233038
 # compton composite manager
-exec --no-startup-id compton
+$exec compton
 # dunst notification manager
-exec --no-startup-id dunst
+$exec dunst
 # Set screen resolution on laptop display
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
+$exec xrandr --output eDP-1 --mode 1920x1080
 # network manager
-exec --no-startup-id nm-applet
-# gnome-screensaver, lockscreen fix dat bg before use.
-#exec --no-startup-id gnome-screensaver
+$exec nm-applet
 # load Xresources
-exec --no-startup-id xrdb -merge ~/.XResources
+$exec xrdb -merge ~/.XResources
 # fix headphone noise bug on DELL XPS13
-exec --no-startup-id amixer -q -c 0 set "Headphone Mic Boost" 10dB
+$exec amixer -q -c 0 set "Headphone Mic Boost" 10dB
 # set volumes
-exec --no-startup-id amixer -q -c 0 set Headphone 100% unmute
-exec --no-startup-id amixer -q -c 0 set Speaker 100% unmute
-
-# Set mod-button
-set $mod Mod4
+$exec amixer -q -c 0 set Headphone 100% unmute
+$exec amixer -q -c 0 set Speaker 100% unmute
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -67,7 +63,7 @@ bindsym $mod+Shift+q kill
 # installed.
 
 # NOTE: dmenu binary is replaced with rofi, original dmenu is /usr/bin/dmenu.BAK 
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d $exec i3-dmenu-desktop
 
 # Use # as separator since i3 dislikes commas in exec commands.
 bindsym $mod+d exec rofi -modi "drun#run#ssh" -show drun
@@ -239,7 +235,6 @@ bindsym $mod+ctrl+Left workspace prev
 # Lock screen shortcut
 bindsym $mod+ctrl+l exec i3lock --ignore-empty-password -c 233038
 #bindsym $mod+ctrl+l exec /usr/local/bin/lock.sh
-#bindsym $mod+ctrl+l exec gnome-screensaver-command -l
 
 
 # Float windows
@@ -282,7 +277,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86MonBrightnessUp exec brightness.py inc
 bindsym XF86MonBrightnessDown exec brightness.py dec
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/active_i3_wallpaper.png
+$exec feh --bg-fill ~/Pictures/wallpapers/active_i3_wallpaper.png
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 ### COLORS ###
