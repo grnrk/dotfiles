@@ -51,7 +51,7 @@ popup_during_fullscreen smart
 floating_modifier $mod
 
 # start a terminal (uses x-terminal-emulator or $TERMINAL)
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return $exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -175,11 +175,11 @@ for_window [class="^Microsoft Teams - Preview$"] move to workspace $ws1; workspa
 for_window [class="^Evolution$"] move to workspace $ws3; workspace number 3; move workspace to output DP-1-1 primary
 
 # reload the configuration file
-bindsym $mod+Shift+c exec "i3-compile-config && i3-msg reload"
+bindsym $mod+Shift+c $exec "i3-compile-config && i3-msg reload"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Really exit i3 and end your X session?' -b 'YES' 'i3-msg exit'"
+bindsym $mod+Shift+e $exec "i3-nagbar -t warning -m 'Really exit i3 and end your X session?' -b 'YES' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -233,8 +233,8 @@ bindsym $mod+ctrl+Right workspace next
 bindsym $mod+ctrl+Left workspace prev
 
 # Lock screen shortcut
-bindsym $mod+ctrl+l exec i3lock --ignore-empty-password -c 233038
-#bindsym $mod+ctrl+l exec /usr/local/bin/lock.sh
+bindsym $mod+ctrl+l $exec i3lock --ignore-empty-password -c 233038
+#bindsym $mod+ctrl+l $exec /usr/local/bin/lock.sh
 
 
 # Float windows
@@ -258,24 +258,24 @@ bindsym $mod+ctrl+u scratchpad show
 
 ### Player control ###
 # Toggle spotify play/pause
-bindsym $mod+p exec playerctl -p spotify play-pause
+bindsym $mod+p $exec playerctl -p spotify play-pause
 
 ### MEDIA CONTROLS ###
 
 # Volume
-bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 2dB- unmute
-#bindsym XF86AudioMute exec mute-toggle
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume $exec amixer -q -c 0 set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume $exec amixer -q -c 0 set Master 2dB- unmute
+#bindsym XF86AudioMute $exec mute-toggle
+bindsym XF86AudioMute $exec amixer -q set Master toggle
 
 # Player
-bindsym XF86AudioPlay exec playerctl play-pause 
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPlay $exec playerctl play-pause 
+bindsym XF86AudioPrev $exec playerctl previous
+bindsym XF86AudioNext $exec playerctl next
 
 # Sreen brightness
-bindsym XF86MonBrightnessUp exec brightness.py inc
-bindsym XF86MonBrightnessDown exec brightness.py dec
+bindsym XF86MonBrightnessUp $exec brightness.py inc
+bindsym XF86MonBrightnessDown $exec brightness.py dec
 
 $exec feh --bg-fill ~/Pictures/wallpapers/active_i3_wallpaper.png
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
