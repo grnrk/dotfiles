@@ -8,7 +8,7 @@ fi
 case $1 in
 	"i3")
 		PACKAGES=(
-			'compton'
+			'picom'
 			'dunst'
 			'rofi'
 			'feh'

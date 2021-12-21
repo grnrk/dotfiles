@@ -11,8 +11,8 @@ set $exec exec --no-startup-id
 # screensaver on after 180s = locked
 $exec xset s 180 180
 $exec xss-lock -- i3lock -n -c 233038
-# compton composite manager
-$exec compton
+# composite manager
+$exec picom
 # dunst notification manager
 $exec dunst
 # Set screen resolution on laptop display
