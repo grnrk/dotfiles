@@ -64,18 +64,10 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG
 
 " default to hybrid line numbers
 set number
-"set relativenumber
+set relativenumber
+nmap <Leader>n :set number!<cr>
+nmap <C-n> :set relativenumber!<cr>
 
-" enable absolute line no toggle
-function! RelNumberToggle()
-  if(&relativenumber == 1)
-    set relativenumber !
-  else
-    set relativenumber
-  endif
-endfunc
-
-nmap <C-n> :call RelNumberToggle()<cr>
 
 " Toggle whitespace visibility
 function! WhiteSpaceToggle()
