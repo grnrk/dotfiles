@@ -5,6 +5,7 @@
 
 set $mod Mod4
 set $exec exec --no-startup-id
+set $terminal alacritty
 
 ## auto-start thingies
 
@@ -50,8 +51,8 @@ popup_during_fullscreen smart
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal (uses x-terminal-emulator or $TERMINAL)
-bindsym $mod+Return $exec i3-sensible-terminal
+# start a terminal (i3-sensible-terminal uses x-terminal-emulator or $TERMINAL)
+bindsym $mod+Return $exec $terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
