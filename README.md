@@ -49,10 +49,6 @@ __Clone incl. submodules__
 ```
 git clone --recurse-submodules <repo>
 ```
-OR (older):
-```
-git clone --recursive <repo>
-```
 
 __Adding new submodules__
 ```
@@ -68,9 +64,11 @@ __Update__
 ```
 git pull --recurse-submodules
 ```
-OR (older):
+
+__Remove__
 ```
-git submodule update --recursive --remote
+git submodule deinit <path_to_submodule>
+git rm <path_to_submodule>
 ```
 
 # Linux
