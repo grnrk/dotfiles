@@ -8,6 +8,11 @@ execute pathogen#infect()
 " needed for pathogen to be able to work magic
 " and for tab settings below
 filetype plugin indent on
+
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
+
 " set <Leader> to comma
 let mapleader=","
 set ignorecase
@@ -117,29 +122,6 @@ map <C-t> :NERDTreeToggle<CR>
 " Exit vim if the only window left is NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" SYNTASTIC SETTINGS
-" recommended defaults
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"" modemap settings
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["puppet", "python", "sh", "yaml", "go"],
-    \ "passive_filetypes": ["ruby", "php"] }
-" Set default python checker, flake8 = PEP8 + pyflakes
-let g:syntastic_python_checkers = ['flake8', 'mypy']
-let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_sh_checkers = ['shellcheck']
-" Toggle syntasticCheck
-nmap <C-s> :call SyntasticToggleMode()<cr>
-
 " SYNTAX HIGHLIGHTING
 " General, built in:
 " syntax on
@@ -155,3 +137,43 @@ let g:ycm_auto_hover = ""
 nmap gd :YcmCompleter GoTo<CR>
 "nmap gh :YcmCompleter GetDoc<CR>
 nmap gh <plug>(YCMHover)
+
+" ALE settings
+" https://github.com/dense-analysis/ale
+" Run :ALEinfo to see what's configured
+
+" let g:ale_lint_on_enter = 0
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+" ALE keybindings
+nmap <silent> <C-s> <Plug>(ale_toggle)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" By default, all available (installed) tools for all supported languages
+" will be run. This selects a subset:
+let g:ale_linters = {
+\   'python': ['flake8', 'mypy', 'black'],
+\}
+
+" Enable lightline-ale to provide ale status for lightline
+let g:lightline = {}
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \ }
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
+let g:lightline.active = {
+        \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+        \            [ 'lineinfo' ],
+	    \            [ 'percent' ],
+	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }

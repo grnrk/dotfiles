@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/molokai"]
 	path = .vim/bundle/molokai
 	url = https://github.com/tomasr/molokai.git
@@ -31,3 +28,9 @@
 [submodule ".vim/bundle/pear-tree"]
 	path = .vim/bundle/pear-tree
 	url = https://github.com/tmsvg/pear-tree
+[submodule ".vim/bundle/ale"]
+	path = .vim/bundle/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule ".vim/bundle/lightline-ale"]
+	path = .vim/bundle/lightline-ale
+	url = https://github.com/maximbaz/lightline-ale.git

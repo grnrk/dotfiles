@@ -216,3 +216,4 @@ go/
 .fehbg
 .config/meld/
 .wavemonrc
+.node_repl_history
