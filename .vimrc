@@ -154,6 +154,10 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_linters = {
 \   'python': ['flake8', 'mypy', 'black'],
 \}
+let b:ale_fixers = {
+\    'javascript': ['prettier', 'eslint'],
+\    'python': ['black'],
+\}
 
 " Enable lightline-ale to provide ale status for lightline
 let g:lightline = {}
