@@ -22,6 +22,7 @@ set -gx PATH /sbin /usr/sbin /usr/local/sbin ~/.local/bin $PATH
 alias tmux "env TERM=screen-256color tmux"
 alias wiki "ddgr --np --gb !w $argv[1]"
 alias ddg "ddgr --np --gb !duckduckgo $argv[1]"
+alias vim "nvim"
 
 ### GIT PROMPT CONFIGURATION
 # See the file /usr/share/fish/functions/fish_git_prompt.fish
