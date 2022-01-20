@@ -34,6 +34,3 @@
 [submodule ".vim/bundle/lightline-ale"]
 	path = .vim/bundle/lightline-ale
 	url = https://github.com/maximbaz/lightline-ale.git
-[submodule "/home/gorane/.config/nvim/pack/packager/opt/vim-packager"]
-	path = /home/gorane/.config/nvim/pack/packager/opt/vim-packager
-	url = https://github.com/kristijanhusak/vim-packager
