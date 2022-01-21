@@ -31,6 +31,7 @@ case $1 in
 		PACKAGES=(
 			'vim-nox'
 			'vim-youcompleteme'
+			'python3-pynvim'
 			'python3-flake8'
             'mypy'
             'python3-virtualenv'

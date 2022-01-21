@@ -19,3 +19,5 @@ filetype on
 ```
 
 # Neovim
+Installed with official appimage for version control.
+
