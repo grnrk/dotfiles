@@ -24,6 +24,9 @@
 .mutt/.cal
 .vim/.netrwhist
 .vim/undo/
+.vim/plugged/
+vimwiki/
+vimwiki_html/
 .mozilla/
 .thunderbird/
 Desktop/
@@ -217,3 +220,5 @@ go/
 .config/meld/
 .wavemonrc
 .node_repl_history
+.config/Joplin/
+.config/joplin-desktop/

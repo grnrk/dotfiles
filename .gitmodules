@@ -1,36 +1,3 @@
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule ".vim/bundle/molokai"]
-	path = .vim/bundle/molokai
-	url = https://github.com/tomasr/molokai.git
 [submodule ".DOTFILES_RESOURCES/bin/nox/diff-so-fancy"]
 	path = .DOTFILES_RESOURCES/bin/nox/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule ".vim/bundle/SimpylFold"]
-	path = .vim/bundle/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/lightline.vim"]
-	path = .vim/bundle/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-polyglot"]
-	path = .vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-[submodule ".vim/bundle/pear-tree"]
-	path = .vim/bundle/pear-tree
-	url = https://github.com/tmsvg/pear-tree
-[submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = https://github.com/dense-analysis/ale.git
-[submodule ".vim/bundle/lightline-ale"]
-	path = .vim/bundle/lightline-ale
-	url = https://github.com/maximbaz/lightline-ale.git

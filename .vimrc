@@ -2,13 +2,9 @@
 " must be first, because it changes other options as a side effect
 set nocompatible
 
-" Enable pathogen plugin manager
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-" needed for pathogen to be able to work magic
-" and for tab settings below
+" Is this still needed???
 filetype plugin indent on
-
+:
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
 silent! helptags ALL
@@ -123,9 +119,10 @@ map <C-t> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " SYNTAX HIGHLIGHTING
-" General, built in:
-" syntax on
-" We use vim-polygot now...
+" vim-polygot is used for improved syntax hl in favour of `syntax on`
+
+" Toggle search result hl
+nmap <C-L> :set hlsearch!<CR>
 
 " YouCompleteMe settings
 " Reference: /usr/share/vim-youcompleteme/doc/youcompleteme.txt 
@@ -181,3 +178,23 @@ let g:lightline.active = {
         \            [ 'lineinfo' ],
 	    \            [ 'percent' ],
 	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
+
+call plug#begin()
+" Make sure you use single quotes
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tomasr/molokai'  " colors/molokai.vim is symlinked to .vim/colors
+Plug 'tmhedberg/SimpylFold'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+Plug 'tmsvg/pear-tree'
+Plug 'vimwiki/vimwiki'
+call plug#end()
+" plug#end() Automatically executes filetype plugin indent on and syntax enable.
+syntax off
+
+" Vim Wiki
+au FileType vimwiki setlocal shiftwidth=2 tabstop=2 expandtab
