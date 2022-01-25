@@ -1,8 +1,6 @@
 " enter the current millenium
 " must be first, because it changes other options as a side effect
 set nocompatible
-
-" Is this still needed???
 filetype plugin indent on
 :
 " Load all of the helptags now, after plugins have been loaded.
@@ -182,7 +180,6 @@ let g:lightline.active = {
 call plug#begin()
 " Make sure you use single quotes
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tomasr/molokai'  " colors/molokai.vim is symlinked to .vim/colors
 Plug 'tmhedberg/SimpylFold'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
@@ -198,3 +195,25 @@ syntax off
 
 " Vim Wiki
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2 expandtab
+let g:vimwiki_global_ext = 0
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_auto_header = 1
+" Neither C or S is working properly...
+nmap <Leader><CR> <Plug>VimwikiTabnewLink
+" nmap <C-A-t> <Plug>VimwikiTabnewLink
+" <S-CR> <Plug>VimwikiSplitLink
+
+"let g:vimwiki_list = [{'path': '~/vimwiki/',
+"                     \ 'links_space_char': '_',
+"                     \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" md with vimwiki_markdown for htmlconversion
+" https://github.com/WnP/vimwiki_markdown/
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                     \ 'links_space_char': '_',
+                     \ 'template_path': '~/vimwiki/templates/',
+	                 \ 'template_default': 'default',
+                     \ 'path_html': '~/vimwiki/site_html/',
+                     \ 'custom_wiki2html': 'vimwiki_markdown',
+                     \ 'template_ext': '.tpl',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
