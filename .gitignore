@@ -222,3 +222,4 @@ go/
 .node_repl_history
 .config/Joplin/
 .config/joplin-desktop/
+.config/nvim/config/ycm_extra_conf.py
