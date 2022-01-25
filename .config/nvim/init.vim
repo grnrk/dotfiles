@@ -222,7 +222,8 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Instant md preview
+" https://github.com/instant-markdown/vim-instant-markdown
 map <leader>md :InstantMarkdownPreview<CR>
 map <leader>mds :InstantMarkdownStop<CR>
-let g:instant_markdown_python = 1  " Uses smdv and removes the JS dependency.
+let g:instant_markdown_python = 1  " Uses python smdv  only and removes the JS dependency.
 let g:instant_markdown_autostart = 0
