@@ -7,8 +7,24 @@ filetype plugin indent on
 " All messages and errors will be ignored.
 silent! helptags ALL
 
-" Source additional config
-source ~/.config/nvim/config/plugins.vim
+" Vim Plug
+" https://github.com/junegunn/vim-plug
+call plug#begin()
+" Make sure you use single quotes
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+Plug 'tmsvg/pear-tree'
+Plug 'vimwiki/vimwiki'
+Plug 'instant-markdown/vim-instant-markdown'
+call plug#end()
+" plug#end() Automatically executes filetype plugin indent on and syntax enable.
+syntax off  " vim-polygot is used for syntax hl in favour of `syntax on`
 
 " set <Leader> to comma
 let mapleader=","
@@ -119,15 +135,12 @@ map <C-t> :NERDTreeToggle<CR>
 " Exit vim if the only window left is NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" SYNTAX HIGHLIGHTING
-" vim-polygot is used for improved syntax hl in favour of `syntax on`
-
 " Toggle search result hl
 nmap <C-L> :set hlsearch!<CR>
 
 " YouCompleteMe settings
 " Reference: /usr/share/vim-youcompleteme/doc/youcompleteme.txt 
-let g:ycm_global_ycm_extra_conf = "~/.config/nvim/config/ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = " ~/.local/share/nvim/site/config/ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 " Turn off doc auto hover
 let g:ycm_auto_hover = ""
@@ -180,22 +193,6 @@ let g:lightline.active = {
 	    \            [ 'percent' ],
 	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
 
-call plug#begin()
-" Make sure you use single quotes
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tmhedberg/SimpylFold'
-Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'dense-analysis/ale'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'tmsvg/pear-tree'
-Plug 'vimwiki/vimwiki'
-call plug#end()
-" plug#end() Automatically executes filetype plugin indent on and syntax enable.
-syntax off
-
 " Vim Wiki
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2 expandtab
 let g:vimwiki_global_ext = 0
@@ -210,8 +207,6 @@ nmap <Leader><CR> <Plug>VimwikiTabnewLink
 "                     \ 'links_space_char': '_',
 "                     \ 'syntax': 'markdown', 'ext': '.md'}]
 
-" md with vimwiki_markdown for htmlconversion
-" https://github.com/WnP/vimwiki_markdown/
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                      \ 'links_space_char': '_',
                      \ 'template_path': '~/vimwiki/templates/',
@@ -222,7 +217,6 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Instant md preview
-" https://github.com/instant-markdown/vim-instant-markdown
 map <leader>md :InstantMarkdownPreview<CR>
 map <leader>mds :InstantMarkdownStop<CR>
 let g:instant_markdown_python = 1  " Uses python smdv  only and removes the JS dependency.
