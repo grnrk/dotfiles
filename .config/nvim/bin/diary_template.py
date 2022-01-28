@@ -11,5 +11,7 @@ template = """## First things first!
 
 ## Summary
   - Canned tomatoes: X
-  - Crushed tomatoes:"""
+  - Crushed tomatoes:
+
+## Notes"""
 print(template)
