@@ -215,9 +215,12 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
                      \ 'custom_wiki2html': 'vimwiki_markdown',
                      \ 'template_ext': '.tpl',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" Create diary files using custom templating script
+au BufNewFile ~/vimwiki/diary/*.md :silent 0r !~/.config/nvim/bin/diary_template.py '%'
 
 " Instant md preview
 map <leader>md :InstantMarkdownPreview<CR>
 map <leader>mds :InstantMarkdownStop<CR>
 let g:instant_markdown_python = 1  " Uses python smdv  only and removes the JS dependency.
 let g:instant_markdown_autostart = 0
+let g:instant_markdown_browser = "chromium"
