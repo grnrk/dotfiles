@@ -75,6 +75,13 @@ autocmd BufNewFile,BufRead *.yaml,*.yml
   \ softtabstop=2
   \ shiftwidth=2
 
+autocmd BufNewFile,BufRead *.md,*.markdown,*.MD
+  \ set expandtab
+  \ autoindent
+  \ tabstop=2
+  \ softtabstop=2
+  \ shiftwidth=2
+
 " limit textwidth for git commit edit message
 autocmd BufNewFile,BufRead COMMIT_EDITMSG
   \ set paste!
