@@ -9,7 +9,7 @@ if [ -f $HOME/.config/fish/local_config.fish ]
 end
 
 # editor
-set -gx EDITOR vim
+set -gx EDITOR nvim
 # path
 set -gx PATH /sbin /usr/sbin /usr/local/sbin ~/.local/bin $PATH
 # term 
