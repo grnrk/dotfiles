@@ -223,3 +223,6 @@ go/
 .config/Joplin/
 .config/joplin-desktop/
 .config/nvim/config/ycm_extra_conf.py
+.ICAClient/
+.GA_ClientID
+.gp1234/
