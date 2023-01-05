@@ -226,3 +226,6 @@ go/
 .ICAClient/
 .GA_ClientID
 .gp1234/
+.netbox_token
+.config/obsidian/*
+.vagrant.d/*
