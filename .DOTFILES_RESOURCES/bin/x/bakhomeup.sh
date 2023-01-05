@@ -36,6 +36,7 @@ rsync -qaz --delete --inplace --backup \
 --exclude=".aws/" \
 --exclude=".yadm/" \
 --exclude=".vault-token" \
+--exclude=".netbox_token" \
 --exclude=".awx-env" \
 --exclude=".adquery.ini" \
 --exclude=".ansible_vault_pass" \
