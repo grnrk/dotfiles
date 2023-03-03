@@ -229,3 +229,5 @@ go/
 .netbox_token
 .config/obsidian/*
 .vagrant.d/*
+__pycache__/*
+.m2/

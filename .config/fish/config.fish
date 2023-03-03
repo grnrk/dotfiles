@@ -25,6 +25,7 @@ alias ddg "ddgr --np --gb !duckduckgo $argv[1]"
 alias vim "nvim"
 alias vw "vim -c VimwikiIndex"
 alias vwd "vim -c VimwikiDiaryIndex"
+alias mutt "neomutt"
 
 ### GIT PROMPT CONFIGURATION
 # See the file /usr/share/fish/functions/fish_git_prompt.fish

@@ -87,9 +87,9 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG
   \ set paste!
   \ textwidth=72
 
-" default to hybrid line numbers
 set number
-set relativenumber
+" Enable below to default to hybrid line numbers
+" set relativenumber
 nmap <Leader>n :set number!<cr>
 nmap <C-n> :set relativenumber!<cr>
 
