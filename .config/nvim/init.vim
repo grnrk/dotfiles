@@ -87,6 +87,10 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG
   \ set paste!
   \ textwidth=72
 
+" CFEngine3 syntax
+au BufRead,BufNewFile *.cf set ft=cf3
+au! Syntax cf3 source $HOME/.config/nvim/syntax/cf3.vim
+
 set number
 " Enable below to default to hybrid line numbers
 " set relativenumber
