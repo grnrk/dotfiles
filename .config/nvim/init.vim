@@ -22,9 +22,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tmsvg/pear-tree'
 Plug 'vimwiki/vimwiki'
 Plug 'instant-markdown/vim-instant-markdown'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 " plug#end() Automatically executes filetype plugin indent on and syntax enable.
-syntax off  " vim-polygot is used for syntax hl in favour of `syntax on`
+
+" Load coc config
+source ~/.config/nvim/coc-config.vim
+
+syntax off  " Syntax hl handled by plugin
 
 " set <Leader> to comma
 let mapleader=","
@@ -68,7 +73,7 @@ autocmd BufNewFile,BufRead *.py,*.sh
   \ softtabstop=4
   \ shiftwidth=4
 
-autocmd BufNewFile,BufRead *.yaml,*.yml
+autocmd BufNewFile,BufRead *.yaml,*.yml,*.json
   \ set expandtab
   \ autoindent
   \ tabstop=2
@@ -127,7 +132,7 @@ nmap <silent> <Leader>+ :resize +10<CR>
 nmap <silent> <Leader>- :resize -10<CR>
 
 " disable mouse
-set mouse-=a
+set mouse=
 
 " show status line at all times
 set laststatus=2
@@ -148,17 +153,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Toggle search result hl
 nmap <C-L> :set hlsearch!<CR>
-
-" YouCompleteMe settings
-" Reference: /usr/share/vim-youcompleteme/doc/youcompleteme.txt 
-let g:ycm_global_ycm_extra_conf = " ~/.local/share/nvim/site/config/ycm_extra_conf.py"
-let g:ycm_autoclose_preview_window_after_completion = 1
-" Turn off doc auto hover
-let g:ycm_auto_hover = ""
-" Ycm keybindings
-nmap gd :YcmCompleter GoTo<CR>
-"nmap gh :YcmCompleter GetDoc<CR>
-nmap gh <plug>(YCMHover)
 
 " ALE settings
 " https://github.com/dense-analysis/ale
