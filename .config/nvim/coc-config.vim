@@ -1,6 +1,5 @@
 
-" https://vi.stackexchange.com/questions/26699/how-to-format-files-on-save-using-black-with-neovim-and-coc
-
+let g:coc_global_extensions = ['coc-json', 'coc-markdownlint', 'coc-pairs', 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-yaml']
 
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
