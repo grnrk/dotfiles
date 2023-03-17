@@ -7,27 +7,13 @@ filetype plugin indent on
 " All messages and errors will be ignored.
 silent! helptags ALL
 
-" Vim Plug
-" https://github.com/junegunn/vim-plug
-call plug#begin()
-" Make sure you use single quotes
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tmhedberg/SimpylFold'
-Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'dense-analysis/ale'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'tmsvg/pear-tree'
-Plug 'vimwiki/vimwiki'
-Plug 'instant-markdown/vim-instant-markdown'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
-" plug#end() Automatically executes filetype plugin indent on and syntax enable.
-
-" Load coc config
-source ~/.config/nvim/coc-config.vim
+" Load configuration
+" Plugins
+source ~/.config/nvim/vim/plugins.vim
+" COC
+source ~/.config/nvim/vim/coc.vim
+" VimWiki
+source ~/.config/nvim/vim/vimwiki.vim
 
 syntax off  " Syntax hl handled by plugin
 
@@ -94,7 +80,7 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG
 
 " CFEngine3 syntax
 au BufRead,BufNewFile *.cf set ft=cf3
-au! Syntax cf3 source $HOME/.config/nvim/syntax/cf3.vim
+au! Syntax cf3 source ~/.config/nvim/syntax/cf3.vim
 
 set number
 " Enable below to default to hybrid line numbers
@@ -153,75 +139,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Toggle search result hl
 nmap <C-L> :set hlsearch!<CR>
-
-" ALE settings
-" https://github.com/dense-analysis/ale
-" Run :ALEinfo to see what's configured
-
-" let g:ale_lint_on_enter = 0
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
-" ALE keybindings
-nmap <silent> <C-s> <Plug>(ale_toggle)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" By default, all available (installed) tools for all supported languages
-" will be run. This selects a subset:
-let g:ale_linters = {
-\   'python': ['flake8', 'mypy', 'black'],
-\}
-let b:ale_fixers = {
-\    'javascript': ['prettier', 'eslint'],
-\    'python': ['black'],
-\}
-
-" Enable lightline-ale to provide ale status for lightline
-let g:lightline = {}
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_infos': 'lightline#ale#infos',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
-let g:lightline.component_type = {
-      \     'linter_checking': 'right',
-      \     'linter_infos': 'right',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'right',
-      \ }
-let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
-let g:lightline.active = {
-        \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
-        \            [ 'lineinfo' ],
-	    \            [ 'percent' ],
-	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
-
-" Vim Wiki
-au FileType vimwiki setlocal shiftwidth=2 tabstop=2 expandtab
-let g:vimwiki_global_ext = 0
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_auto_header = 1
-" Neither C or S is working properly...
-nmap <Leader><CR> <Plug>VimwikiTabnewLink
-" nmap <C-A-t> <Plug>VimwikiTabnewLink
-" <S-CR> <Plug>VimwikiSplitLink
-
-"let g:vimwiki_list = [{'path': '~/vimwiki/',
-"                     \ 'links_space_char': '_',
-"                     \ 'syntax': 'markdown', 'ext': '.md'}]
-
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                     \ 'links_space_char': '_',
-                     \ 'template_path': '~/vimwiki/templates/',
-	                 \ 'template_default': 'default',
-                     \ 'path_html': '~/vimwiki/site_html/',
-                     \ 'custom_wiki2html': 'vimwiki_markdown',
-                     \ 'template_ext': '.tpl',
-                     \ 'syntax': 'markdown', 'ext': '.md'}]
-" Create diary files using custom templating script
-au BufNewFile ~/vimwiki/diary/*.md :silent 0r !~/.config/nvim/bin/diary_template.py '%'
 
 " Instant md preview
 map <leader>md :InstantMarkdownPreview<CR>

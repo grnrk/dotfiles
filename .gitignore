@@ -231,3 +231,4 @@ go/
 .vagrant.d/*
 __pycache__/*
 .m2/
+.config/coc/

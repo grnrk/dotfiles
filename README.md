@@ -14,11 +14,11 @@ Set the hostname of laptop in the _LAPTOPS_ variable in .yadm/bootstrap.
 _Only one local class at the time is configurable_
 
 Available classes:
+
 * work
 
 **Unset class**
 `yadm config local.class ''`
-
 
 Run; `yadm bootstrap`
 
@@ -35,37 +35,40 @@ This directory holds everything that is related to dotfiles configuration and/or
 
 Files in the bin directory may be appended with an ending of _.install_ to be copied instead of symlinked.
 
-
 * **/bootstrap** - Scripts executed from .yadm/bootstrap.
 
 * **/etc** - Configuration files for /etc.
 
 * **/system** - System configuration items.
 
-
 ## Git submodules
 
-__Clone incl. submodules__
+**Clone incl. submodules**
+
 ```
 git clone --recurse-submodules <repo>
 ```
 
-__Adding new submodules__
+**Adding new submodules**
+
 ```
 git submodule add <GIT-REMOTE> <LOCAL_PATH>
 ```
 
-__Install (already cloned repository)__
+**Install (already cloned repository)**
+
 ```
 git submodule update --init --recursive
 ```
 
-__Update__
+**Update**
+
 ```
 git pull --recurse-submodules
 ```
 
-__Remove__
+**Remove**
+
 ```
 git submodule deinit <path_to_submodule>
 git rm <path_to_submodule>
@@ -76,10 +79,9 @@ git rm <path_to_submodule>
 ## Keychron keyboard
 
 ### Function keys
-https://mikeshade.com/posts/keychron-linux-function-keys/
+<https://mikeshade.com/posts/keychron-linux-function-keys/>
 
 > echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
 >
 > sudo update-initramfs -u
-
 

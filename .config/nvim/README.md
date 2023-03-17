@@ -8,6 +8,11 @@ Get Appimage **v0.5.1** from [Neovim on GitHub](https://github.com/neovim/neovim
 Plugins and other stuff are installed to `.local/share/nvim/`.  
 Run `:set runtimepath?` to see which other dirs are sourced.
 
+## COC
+
+Update/install all extensions in `extensions/package.json`  
+`:CocCommand extensions.forceUpdateAll`
+
 # VIM
 
 Current config also works with vim8.
