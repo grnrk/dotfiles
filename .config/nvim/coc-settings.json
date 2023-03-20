@@ -4,7 +4,7 @@
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.mypyEnabled": true,
-  "snippets.ultisnips.pythonPrompt": true, // No idea what this does
+  "snippets.ultisnips.pythonPrompt": false, // No idea what this does
   "diagnostic.checkCurrentLine": true,
   // "diagnostic.errorSign": "✖"
   // "diagnostic.messageTarget": "echo" // Prints diagnostics to statusline instead of HUD

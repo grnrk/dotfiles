@@ -78,6 +78,14 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG
   \ set paste!
   \ textwidth=72
 
+" Open help windows in vertical split to the right
+augroup vimrc_help
+  autocmd!
+  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+augroup END
+" Open git filetype to the right
+autocmd FileType git wincmd L
+
 " CFEngine3 syntax
 au BufRead,BufNewFile *.cf set ft=cf3
 au! Syntax cf3 source ~/.config/nvim/syntax/cf3.vim
