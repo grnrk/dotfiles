@@ -40,4 +40,5 @@ rsync -qaz --delete --inplace --backup \
 --exclude=".awx-env" \
 --exclude=".adquery.ini" \
 --exclude=".ansible_vault_pass" \
+--exclude=".local/share/fish/fish_history*" \
 $src ${trg}/full/
