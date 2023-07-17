@@ -3,6 +3,9 @@
 call plug#begin()
 " Make sure you use single quotes
 Plug 'ctrlpvim/ctrlp.vim'
+" General folding improved
+Plug 'Konfekt/FastFold'
+" Python folding
 Plug 'tmhedberg/SimpylFold'
 Plug 'scrooloose/nerdtree'
 " Statusbar
@@ -11,8 +14,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" Character pairing
-Plug 'tmsvg/pear-tree'
+" Character pairing (cannot be used simultaneousley with <CR> for accepting selection in COC)
+" Plug 'tmsvg/pear-tree'
 Plug 'vimwiki/vimwiki'
 Plug 'instant-markdown/vim-instant-markdown'
 " Snippets library for coc-snippets

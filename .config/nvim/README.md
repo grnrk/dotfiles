@@ -27,8 +27,7 @@ Managed with [Vim Plug](https://github.com/junegunn/vim-plug)
 
 **Dependencies:**  
 
-- python [smdv](https://pypi.org/project/smdv/)
-- pandoc
+- Nodejs: instant-markdown-d
 
 ## VimWiki
 

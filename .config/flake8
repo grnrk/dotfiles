@@ -1,5 +1,5 @@
 [flake8]
-max-line-length = 88
+max-line-length = 99
 ignore = F403,F405,W503
 extend-ignore = E203
 # https://flake8.pycqa.org/en/latest/user/error-codes.html

@@ -39,12 +39,15 @@ set noshowmode
 set tabstop=4
 set expandtab
 set autoindent
+" Folding
 " Open documents with folds open.
 set nofoldenable
-" Enable toggle folding/fold
+" Toggle folding/fold
 nmap <space> za
-" Enable toggle all folding
+" Toggle all folding
 nmap <C-f> zi
+" Filetypes with folding enabled
+let g:markdown_folding = 1
 " Tab completion + status bar display
 "set wildmode=longest,list,full
 set wildmenu
@@ -151,6 +154,6 @@ nmap <C-L> :set hlsearch!<CR>
 " Instant md preview
 map <leader>md :InstantMarkdownPreview<CR>
 map <leader>mds :InstantMarkdownStop<CR>
-let g:instant_markdown_python = 1  " Uses python smdv  only and removes the JS dependency.
+" let g:instant_markdown_python = 1  " We use npm instant-markdown-d now...
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "chromium"
