@@ -1,0 +1,9 @@
+set imap_user="gorane@axis.com"
+set folder="imaps://${imap_user}@outlook.office365.com/"
+set smtp_url="smtp://${imap_user}@smtp.office365.com:587/"
+set imap_authenticators="xoauth2"
+set imap_oauth_refresh_command="/home/gorane/.config/mutt/helper_script/mutt_oauth2.py \
+   /home/gorane/.config/mutt/helper_script/${imap_user}.tokens"
+
+set smtp_authenticators=${imap_authenticators}
+set smtp_oauth_refresh_command=${imap_oauth_refresh_command}

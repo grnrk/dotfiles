@@ -1,0 +1,18 @@
+# vim: filetype=muttrc
+
+# MIME types to auto-view as defined in mailcap
+auto_view text/html
+auto_view text/calendar
+# auto_view text/calendar application/ics
+
+# preferred types, trie to use auto_view if matched.
+# alternative_order text/calendar text/plain text/enriched text/html text/*
+# alternative_order text/plain text/enriched text/html text/*
+alternative_order text/calendar text/html text/enriched text/plain text/*
+# forward message including attachments
+set mime_forward=yes 
+set mime_forward_rest=yes
+
+# To add own comments to the top of the forwarded message;
+# Go to the attachment-menu, tag all attachments you want to forward and also tag the text part of the e-mail. 
+# Then invoke "tag-prefix" + "forward"

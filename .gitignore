@@ -19,9 +19,6 @@
 .config/i3/config.local
 .config/i3/config.*.bak
 .config/i3status/config
-.mutt/.hcache
-.mutt/.msg_cache
-.mutt/.cal
 .vim/.netrwhist
 .vim/undo/
 .vim/plugged/
@@ -165,7 +162,6 @@ VirtualBox VMs/
 .config/htop/
 .config/krdcrc
 .config/mimeapps.list
-.config/mutt-ldap.cfg
 .config/nautilus/
 .config/pavucontrol.ini
 .config/remmina/
@@ -232,3 +228,11 @@ go/
 __pycache__/*
 .m2/
 .config/coc/
+.config/mutt/*cache
+.config/mutt/**/*tokens
+.config/mutt/.cal
+i3x-xdg-terminals.list
+.zabbix-cli/
+libvirt/
+.config/.gsd-keyboard.settings-ported
+.config/xdg-terminals.list

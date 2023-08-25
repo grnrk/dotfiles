@@ -1,0 +1,43 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+#
+# To use w systemd, copy .timer and .service files to /etc/systemd/user
+# and enable them.
+#
+
+[general]
+accounts = Work
+# enable keyring password import
+# content: import keyring
+pythonfile = ~/.offlineimap.py
+
+# Keyring management
+# * SET password: python3 -c "import keyring; keyring.set_password('outlook', 'personal', 'secretpass')"
+# * PRINT password: python3 -c "import keyring; print(keyring.get_password('outlook', 'personal'))"
+
+
+[Account Work]
+# min between syncs, regardless of type
+#autorefresh = 0.5
+# 10 quick refreshes for each full
+# Quick-syncs does not update if the only changes were to IMAP flags.
+#quick = 10
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository Remote]
+type = IMAP
+# internal IP
+#remotehost = imap.axis.com
+# External/internal IP
+remotehost = owa.axis.com 
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = gorane
+remotepasseval = keyring.get_password('outlook', 'personal')
+# folderfilter = lambda foldername: not re.search('^(Deleted\sItems\.\w+|Notes|Calendar|Contacts|Journal|Outbox|Tasks|Conversation\sHistory|Contacts.+)$', foldername)
+folderfilter = lambda foldername: re.search('^(INBOX|Helpdesk|Drafts|Deleted\sItems|Sent\sItems|Zabbix)$', foldername)

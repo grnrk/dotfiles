@@ -1,0 +1,124 @@
+# vim: filetype=muttrc
+
+### Source configuration
+source "~/.config/mutt/user"
+source ~/.config/mutt/sidebar
+source ~/.config/mutt/colors
+source ~/.config/mutt/o365
+# source ~/.config/mutt/colors-old
+source ~/.config/mutt/mime
+set mailcap_path = ~/.config/mutt/mailcap
+
+### IMAP-configuration
+set imap_keepalive = 60
+#set imap_user = $my_username
+#set spoolfile = 'imaps://$my_username@imap.axis.com:993/INBOX'
+#set folder = 'imaps://imap.axis.com:993/'
+# mailboxes ... # which boxes to monitor 
+#unset imap_passive # Don't wait to enter mailbox manually 
+#set imap_check_subscribed  # Is equivalent to runnin "mailboxes" on each subscribed mailbox
+#set imap_list_subscribed
+bind index G imap-fetch-mail # Look for new mail
+
+### Local mail handling
+# Uncommented to use o365. Uncomment for use with offlineimap
+# set mbox_type= Maildir
+# set folder = '~/Maildir' # Mail folder location
+
+# + Expands to $folder
+set spoolfile = '+INBOX' # Default inbox
+set record = '+Sent Items'
+set postponed = '+Drafts'
+set trash = '+Deleted Items'
+
+# Mailboxes to monitor and show in the sidebar.
+mailboxes "=Deleted Items" "=Drafts" "=Inbox" "=Junk Email" "=Sent Items" "=Helpdesk" "=Zabbix"
+# Uncommented to use o365. Uncomment for use with offlineimap
+# mailboxes `for file in ~/Maildir/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
+# # Fetch new mail
+# macro index G "<shell-escape>offlineimap -o -u syslog<return>" "Sync mail w offlineimap"
+
+
+### SMTP-configuration
+# Uncommented to use o365. Uncomment for use with std smtp
+# set smtp_url = "smtp://$my_username@smtp-x.axis.com:587"
+# # Fix for SMTP no authenticators available
+# set smtp_authenticators = 'gssapi:login'
+
+
+### TLS
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+
+### FROM-headers
+set realname = $my_realname
+set from = $my_fromaddr
+set use_from = yes
+
+
+### Address book
+# Add sender to abook
+#macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+# enable abook Queries
+#set query_command="abook --mutt-query '%s'"
+set query_command="~/.config/mutt/helper_script/ldap-abook.py -c ~/.config/mutt/helper_script/ldap-abook.ini -s '%s'"
+# enable tab-completion for query_command
+bind editor <tab> complete-query
+# Launch abook
+#macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+
+
+### General settings
+set wait_key = no # dont require keypress after external command exits 0.
+unset mark_old # Read/new is sufficient
+set send_charset = 'utf-8'
+set editor = "vim -c 'set tw=78'"
+unset markers # no ugly plus signs at line breaks
+set text_flowed = yes # http://wcm1.web.rice.edu/mutt-tips.html
+set include = yes # Includes the body of the message replied to.
+set pager_stop  # Dont move to next message when scrolling in pager
+set fast_reply # Dont ask for subject line when responding to email, use existing
+set askcc
+set forward_format = "Fwd: %s" # forward subject formatting
+set sleep_time = 0 # Speed up folders switch
+set smart_wrap  # don't split words
+set index_format = '%4C %Z %{%b %d %R} %-15.15L - %s' # index formatting
+set mail_check = 60 # Reduce polling frequency to a sane level
+set timeout = 10 # ...but poll the current mailbox more frequently (may be obsolete)
+set header_cache = '~/.config/mutt/.hcache'
+set message_cachedir = '~/.config/mutt/.msg_cache'
+set net_inc = 5 # Display download progress every 5K
+# set delete=yes  # delete messages marked for deletion when you exit.
+# set new_mail_command = "/usr/bin/notify-send -t 10000 'MAIL!' 'Mailbox: %f, New: %n, Unread: %u'"
+set signature = '~/.config/mutt/signature'
+
+# Sorting
+set sort = threads
+set strict_threads = yes
+set sort_aux = 'reverse-last-date-received'
+#set sort_browser = 'reverse-date'
+
+# Threads
+# set collapse_all
+unset collapse_unread
+bind index - collapse-thread
+bind index _ collapse-all
+
+### Key Bindings 
+#scroll inside the message rather than the index
+bind editor <space> noop
+bind pager <up> previous-line
+bind pager <down> next-line
+bind index g noop  # https://neomutt.org/guide/configuration.html#bind-warnings
+bind index gg first-entry
+macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index gs "<change-folder>=Sent Items<enter>" "Go to Sent"
+macro index gd "<change-folder>=Drafts<enter>" "Go to Drafts"
+macro index gt "<change-folder>=Deleted Items<enter>" "Go to Deleted items"
+macro index gh "<change-folder>=Helpdesk<enter>" "Go to Helpdesk"
+macro index,pager b '<enter-command>toggle sidebar_visible<enter>' "Toggle sidebar"
+bind index B bounce-message # Remap bounce-message function to “B”
+bind attach <return> view-mailcap
+bind index <backtab> previous-new-then-unread
+# set show_multipart_alternative=inline

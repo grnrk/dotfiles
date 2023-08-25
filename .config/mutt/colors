@@ -1,0 +1,56 @@
+# vim: filetype=muttrc
+
+uncolor index *
+uncolor header *
+uncolor body *
+
+# Documentation:
+# https://neomutt.org/guide/configuration.html#11-%C2%A0using-color-and-mono-video-attributes
+
+
+# Format:
+# color pattern-object [ attribute ...] foreground background pattern 
+
+# colors
+color normal		  default default         # Text is "Text"
+# To color a column in the index, first set default, then override anything where the entire row 
+# should have the same color, eg ~N
+# color index_number default default
+# color index_subject cyan default '.*'
+# color index_subject		    color2 default ~N       # New Messages are Green
+# color index_subject	        color208 default ~F       # Flagged messages are Orange
+color index		    color2 default ~N       # New Messages are Green
+color index	        color208 default ~F       # Flagged messages are Orange
+color index		    color110 default ~T      # Tagged Messages are LightSkyBlue
+color index		    color1 default ~D       # Messages to delete are Red
+color index         color247 default ~v         # messages part of a collapsed thread
+color attachment	color5 default          # Attachments are Pink
+color signature	  color7 default          # Signatures are Surface 2
+color search		  color4 default          # Highlighted results are Blue
+
+color indicator		default color0          # currently highlighted message 
+color error		    color1 default          # error messages are Red
+color status		  color8 default         # status line "Subtext 0"
+color tree        color8 default         # thread tree arrows Subtext 0
+color tilde       color8 default         # blank line padding Subtext 0
+
+color hdrdefault  color6 default         # default headers Pink
+color header		  color6 default "^From:"
+color header	 	  color6 default "^Subject:"
+
+color quoted		  color8 default         # Subtext 0
+color quoted1		  color0 default          # Subtext 1
+color quoted2		  color7 default          # Surface 2
+color quoted3		  color15 default          # Surface 1
+color quoted4		  color15 default
+color quoted5		  color15 default
+
+color body		color2 default		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses Green
+color body	  color2 default		(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs Green
+color body		color4 default		(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text Blue
+color body		color4 default		(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text Blue
+color body		color4 default		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text Blue
+
+color sidebar_flagged   color1 default    # Mailboxes with flagged mails are Red
+color sidebar_new       color10 default   # Mailboxes with new mail are Green
+

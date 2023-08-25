@@ -1,0 +1,23 @@
+# vim: filetype=muttrc
+
+### SideBar
+
+# settings
+set sidebar_width=25
+set sidebar_visible = yes  # when mutt opens
+set mail_check_stats # mandatory for use with %N formatting
+set sidebar_format="%B% %* %?N?%N/?%S"
+set sidebar_sort_method = 'path'
+#set sidebar_delim='|'
+
+#bindings
+bind index \CP sidebar-prev # Previous mailbox
+bind index \CN sidebar-next # Next mailbox
+#bind index \1064 sidebar-prev # Previous mailbox
+#bind index \1013 sidebar-next # Next mailbox
+#bind index \3A sidebar-prev # Previous mailbox
+#bind index \3B sidebar-next # Next mailbox
+bind index \CO sidebar-open # Open selected mailbox
+
+# colors
+color sidebar_new green default # color of folders with new mail

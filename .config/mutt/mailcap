@@ -1,0 +1,28 @@
+# Text
+# cat text/plain is useful when text/html is preferred, but you want to view text/plain attachment using "v"
+text/plain; cat %s; copiousoutput
+text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
+
+# Images
+image/*; mutt_bgrun xloadimage -quiet -shrink %s
+
+# Calendars
+# (icalendar depends on python3-icalendar)
+text/calendar; icalendar view '%s'; copiousoutput; description=iCalendar text; priority=2
+application/ics; icalendar view '%s'; copiousoutput; description=iCalendar text; priority=2
+# text/calendar; mutt-ics; copiousoutput
+# application/ics; mutt-ics; copiousoutput
+
+# PDF
+## Print in pager
+# application/pdf; pdftotext -layout %s -; copiousoutput;
+## Open in external application
+application/pdf; mutt_bgrun xpdf -q %s; copiousoutput;
+
+# Office docs
+## Print in pager
+# application/vnd.openxmlformats-officedocument.wordprocessingml.document; pandoc --from docx --to markdown %s; copiousoutput
+application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s; copiousoutput
+## Open in external application
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; mutt_bgrun libreoffice --nologo %s; nametemplate=%s.docx; test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; mutt_bgrun libreoffice --nologo %s; test=test -n "$DISPLAY"
