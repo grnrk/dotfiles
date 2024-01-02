@@ -22,7 +22,7 @@
 .vim/.netrwhist
 .vim/undo/
 .vim/plugged/
-vimwiki/
+vimwiki*/
 vimwiki_html/
 .mozilla/
 .thunderbird/
@@ -236,3 +236,4 @@ i3x-xdg-terminals.list
 libvirt/
 .config/.gsd-keyboard.settings-ported
 .config/xdg-terminals.list
+.config/weechat/
