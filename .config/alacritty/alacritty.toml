@@ -1,9 +1,129 @@
-import = [
-  "~/.config/alacritty/colors.toml",
-  "~/.config/alacritty/cursor.toml",
-  "~/.config/alacritty/env.toml",
-  "~/.config/alacritty/shell.toml",
-  "~/.config/alacritty/font.toml",
-  "~/.config/alacritty/key_bindings.toml",
-  "~/.config/alacritty/hints.toml"
-]
+
+### ENV ###
+[env]
+TERM = "xterm-256color"
+# Scaling issue when not set: https://github.com/alacritty/alacritty/issues/3549
+WINIT_X11_SCALE_FACTOR = "1"
+
+
+### SHELL ###
+[shell]
+args = ["--login"]
+program = "/usr/bin/fish"
+
+
+### CURSOR ###
+[cursor]
+blink_timeout = 0
+
+[cursor.style]
+blinking = "Always"
+
+### HINTS ###
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "X"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+
+### FONT ###
+[font]
+size = 10.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "monospace"
+# Definition of monospace (or other family name) preferences set in ~/.config/fontconfig/fonts.conf
+# Use `fc-match -s monospace` to see the load order.
+# The reason for defining monospace prefs, rather than setting primary mono type only directly here,
+# is to be able to bump Emoji fonts for proper emoji rendering...
+# See: https://github.com/alacritty/alacritty/issues/153
+#      https://github.com/alacritty/alacritty/issues/153#issuecomment-620571405
+
+[font.offset]
+x = 0
+y = 2
+
+
+### COLORS ###
+
+# https://terminal.sexy
+# https://github.com/alacritty/alacritty-theme
+
+[colors.bright]
+black = "0x888888"
+blue = "0x0f75bd"
+cyan = "0x37c3d6"
+green = "0x86df5d"
+magenta = "0x9e5e83"
+red = "0xd64937"
+white = "0xf9f9f9"
+yellow = "0xfdd75a"
+
+[colors.cursor]
+cursor = "#eeeeee"
+text = "CellBackground"
+
+[colors.normal]
+black = "0x555555"
+blue = "0x0d68a8"
+cyan = "0x288e9c"
+green = "0x61bc3b"
+magenta = "0x744560"
+red = "0xc13220"
+white = "0xa2a2a2"
+yellow = "0xf3b43a"
+
+[colors.primary]
+background = "0x181818"
+foreground = "0xd1d1d1"
+
+
+### KEY BINDINGS ###
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "Up"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "Down"
+mode = "~Alt"
+mods = "Control|Shift"
