@@ -16,6 +16,9 @@ set -gx PATH /sbin /usr/sbin /usr/local/sbin ~/.local/bin $PATH
 # Let TERM be set by resp. terminal
 #set -gx TERM xterm-256color
 
+# Load fishmarks (http://github.com/techwizrd/fishmarks)
+source $__fish_config_dir/functions/marks.fish
+
 # Make tmux play nicely with colors.
 # Also needs `set -g default-terminal "screen-256color"`
 # in tmux.conf

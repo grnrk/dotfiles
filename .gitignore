@@ -237,3 +237,4 @@ libvirt/
 .config/.gsd-keyboard.settings-ported
 .config/xdg-terminals.list
 .config/weechat/
+.sdirs*
