@@ -13,5 +13,6 @@
     "default": true,
     "line_length": false,
     "no-emphasis-as-header": false
-  }
+  },
+  "prettier.tabWidth": 4
 }

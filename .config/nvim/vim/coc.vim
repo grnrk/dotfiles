@@ -1,5 +1,5 @@
 
-let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-vimlsp', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-snippets']
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-vimlsp', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-prettier' ]
 
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
@@ -101,3 +101,6 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " Markdownlint fix
 " nnoremap <silent> <leader>mf :call CocCommand markdownlint.fixAll<CR>
 nmap <silent> mdf :CocCommand markdownlint.fixAll<cr>
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
