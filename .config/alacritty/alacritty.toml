@@ -39,7 +39,7 @@ mods = "Control|Shift"
 
 [hints.enabled.mouse]
 enabled = true
-mods = "None"
+mods = "Control"
 
 
 ### FONT ###
