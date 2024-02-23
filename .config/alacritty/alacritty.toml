@@ -11,6 +11,12 @@ WINIT_X11_SCALE_FACTOR = "1"
 args = ["--login"]
 program = "/usr/bin/fish"
 
+### Window ###
+[window]
+opacity = 0.75
+[window.padding]
+x = 3
+y = 0
 
 ### CURSOR ###
 [cursor]
@@ -88,7 +94,8 @@ white = "0xa2a2a2"
 yellow = "0xf3b43a"
 
 [colors.primary]
-background = "0x181818"
+# background = "0x181818"
+background = "0x141414"
 foreground = "0xd1d1d1"
 
 
