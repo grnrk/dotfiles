@@ -14,9 +14,7 @@ program = "/usr/bin/fish"
 ### Window ###
 [window]
 opacity = 0.75
-[window.padding]
-x = 3
-y = 0
+padding = { x = 3, y = 0 }
 
 ### CURSOR ###
 [cursor]
@@ -32,23 +30,15 @@ hyperlinks = true
 post_processing = true
 # regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-
-[hints.enabled.binding]
-key = "X"
-mods = "Control|Shift"
-
-[hints.enabled.mouse]
-enabled = true
-mods = "Control"
+binding = { key = "X", mods = "Control|Shift" }
+mouse = { enabled = true, mods = "Control" }
 
 
 ### FONT ###
 [font]
 size = 10.0
-
-[font.glyph_offset]
-x = 0
-y = 0
+offset = { x = 0, y = 2 }
+glyph_offset = { x = 0, y = 0 }
 
 [font.normal]
 family = "monospace"
@@ -58,10 +48,6 @@ family = "monospace"
 # is to be able to bump Emoji fonts for proper emoji rendering...
 # See: https://github.com/alacritty/alacritty/issues/153
 #      https://github.com/alacritty/alacritty/issues/153#issuecomment-620571405
-
-[font.offset]
-x = 0
-y = 2
 
 
 ### COLORS ###
@@ -100,38 +86,13 @@ foreground = "0xd1d1d1"
 
 
 ### KEY BINDINGS ###
-[[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "PageUp"
-mode = "~Alt"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "PageDown"
-mode = "~Alt"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "ScrollToTop"
-key = "Home"
-mode = "~Alt"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "ScrollToBottom"
-key = "End"
-mode = "~Alt"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "ScrollLineUp"
-key = "Up"
-mode = "~Alt"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "ScrollLineDown"
-key = "Down"
-mode = "~Alt"
-mods = "Control|Shift"
+[keyboard]
+bindings = [
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "PageUp", mods = "Control|Shift", mode = "~Alt", action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Control|Shift", mode = "~Alt", action = "ScrollPageDown" },
+  { key = "Home", mods = "Control|Shift", mode = "~Alt", action = "ScrollToTop" },
+  { key = "End", mods = "Control|Shift", mode = "~Alt", action = "ScrollToBottom" },
+  { key = "Up", mods = "Control|Shift", mode = "~Alt", action = "ScrollLineUp" },
+  { key = "Down", mods = "Control|Shift", mode = "~Alt", action = "ScrollLineDown" },
+]
