@@ -6,7 +6,7 @@ Additionally, i3-workspace monitor mappings are saved at monitor disconnect and 
 ## Dependencies
 * i3ipc-python - [github repository](https://github.com/acrisci/i3ipc-python)
   (Make sure this is installed for the user that will be executing _i3-workspaces.py_.)
-  Installation: `pip install i3ipc`
+  Installation: `apt install python3-i3ipc`
 
 ## Adapt variables to reflect your environment.
 

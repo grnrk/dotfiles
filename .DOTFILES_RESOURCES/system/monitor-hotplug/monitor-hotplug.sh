@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DEVICE="card0"
-EXT_MONITOR="DP-1-1"
+# EXT_MONITOR="DP-1-1"
+EXT_MONITOR="HDMI-1"
 INT_MONITOR="eDP-1"
 # Set DEBUG to yes to log some activity to $LOG_FILE
 DEBUG="yes"
@@ -20,13 +21,13 @@ wait_for_monitor() {
 
 dp_status() {
 
-    # This function returns DISPLAYPORT_CONNECTED="yes" if any connected displayports are found.
+    # This function returns DISPLAYPORT_CONNECTED="yes" if any connected displayport or HDMI screens are found.
 
     # Monitor port names does not match between /sys/class/drm/* and xrandr,
     # and device names may change under /sys/class/drm, so we go through all of them.
-    DISPLAYPORTS=$(find /sys/class/drm/${DEVICE}-DP-*/status)
+    DISPLAYPORTS=$(find /sys/class/drm/ -regextype posix-extended -regex "/sys/class/drm/card0-(DP|HDMI)[-A-Z0-9]+")
     for dp_stat in $DISPLAYPORTS; do
-        read STATUS < $dp_stat
+        read STATUS < $dp_stat/status
         if [ $STATUS == "connected" ]; then
             if [ "$DEBUG" == "yes" ]; then
                 echo "$dp_stat is connected" >> $LOG_FILE
