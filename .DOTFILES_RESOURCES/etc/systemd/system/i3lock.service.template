@@ -4,9 +4,9 @@ Before=sleep.target
 
 [Service]
 User=###USER###
-Type=forking
+Type=exec
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock --ignore-empty-password -c 233038
+ExecStart=/usr/local/bin/lock.sh
 
 [Install]
 WantedBy=sleep.target

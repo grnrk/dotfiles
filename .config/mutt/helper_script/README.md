@@ -49,6 +49,10 @@ __RE-auth__
 
 - In theory(?): `python3 mutt_oauth2.py gorane@axis.com.tokens`
 - In practice: Same as original auth. because error in script??
+  ALLTSÅ:
+    Fixa ny secret i https://portal.azure.com (Sök på app registrations)
+    rm tokens file i detta dir
+    kör initial setup ovan. (--client-secret = Value från den nya secreten. --client-id = samma som innan, INTE det nya "Secret ID")
 
 ### Error
 

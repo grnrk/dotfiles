@@ -6,7 +6,7 @@ EXT_MONITOR="HDMI-1"
 INT_MONITOR="eDP-1"
 # Set DEBUG to yes to log some activity to $LOG_FILE
 DEBUG="yes"
-LOG_FILE=~/.monitor-hotplug.log
+LOG_FILE="/tmp/monitor-hotplug.log"
 I3_WS_BIN="/usr/local/bin/i3-workspaces.py"
 
 
@@ -25,7 +25,7 @@ dp_status() {
 
     # Monitor port names does not match between /sys/class/drm/* and xrandr,
     # and device names may change under /sys/class/drm, so we go through all of them.
-    DISPLAYPORTS=$(find /sys/class/drm/ -regextype posix-extended -regex "/sys/class/drm/card0-(DP|HDMI)[-A-Z0-9]+")
+    DISPLAYPORTS=$(find /sys/class/drm/ -regextype posix-extended -regex "/sys/class/drm/${DEVICE}-(DP|HDMI)[-A-Z0-9]+")
     for dp_stat in $DISPLAYPORTS; do
         read STATUS < $dp_stat/status
         if [ $STATUS == "connected" ]; then

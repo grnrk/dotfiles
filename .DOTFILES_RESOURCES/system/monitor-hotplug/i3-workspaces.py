@@ -3,13 +3,12 @@
 
 import os
 import sys
-import pwd
 import i3ipc
 import pickle
 
 USER_HOME = os.path.expanduser('~')
-I3_SAVE_DIR = os.path.join(USER_HOME, '.i3')
-WS_SAVE_FILE = os.path.join(I3_SAVE_DIR, 'workspace_map')
+I3_SAVE_DIR = os.path.join(USER_HOME, '.cache', 'i3')
+WS_SAVE_FILE = os.path.join(I3_SAVE_DIR, 'i3-workspace-map')
 
 
 def show_help():

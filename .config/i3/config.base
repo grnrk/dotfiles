@@ -6,12 +6,17 @@
 set $mod Mod4
 set $exec exec --no-startup-id
 set $terminal alacritty
+set $wallpaper ~/Pictures/wallpapers/active_i3_wallpaper.png
+set $locker /usr/local/bin/lock.sh
 
 ## auto-start thingies
 
+# Polybar status bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # screensaver on after 180s = locked
 $exec xset s 180 180
-$exec xss-lock -- i3lock -n -c 233038
+# $exec xss-lock --transfer-sleep-lock -- i3lock --nofork -i $wallpaper
+$exec xss-lock --transfer-sleep-lock -- $locker
 # composite manager
 $exec picom
 # dunst notification manager
@@ -29,24 +34,14 @@ $exec amixer -q -c 0 set Headphone 100% unmute
 $exec amixer -q -c 0 set Speaker 100% unmute
 
 # Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# is used in the bar {} block.
 #font pango:monospace 8
 font pango:Sans 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
 
 # default new window behaviour
 workspace_layout stacking
 
 popup_during_fullscreen smart
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -57,26 +52,19 @@ bindsym $mod+Return $exec $terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-
-# NOTE: dmenu binary is replaced with rofi, original dmenu is /usr/bin/dmenu.BAK 
-#bindsym $mod+d $exec i3-dmenu-desktop
+# Dunst close notification
+bindsym $mod+Escape exec dunstctl close
 
 # Use # as separator since i3 dislikes commas in exec commands.
-bindsym $mod+d exec rofi -modi "drun#run#ssh" -show drun
+# bindsym $mod+d exec rofi -modi "drun#run#ssh" -show drun
+bindsym $mod+d exec rofi -no-config -no-lazy-grab -show drun -modi "drun#run" -theme ~/.config/polybar.themes/shapes/scripts/rofi/launcher.rasi
 
 ## calculator
-bindsym $mod+c exec rofi -location 6 -show calc -modi "calc:qalc -t"
-# window switching with rofi
-#bindsym $mod+Tab exec rofi -switchers 'run#window' -show run
-bindsym $mod+Tab exec rofi -modi 'window' -show window -show-icons
+# bindsym $mod+c exec rofi -location 6 -show calc -modi "calc:qalc -t"
 
-# ALT Button
-#bindcode 64 exec rofi -modi 'window' -show window
+# window switching with rofi
+# bindsym $mod+Tab exec rofi -modi 'window' -show window -show-icons
+bindsym $mod+Tab exec rofi -no-config -no-lazy-grab -show window -modi 'window' -show-icons -theme ~/.config/polybar.themes/colorblocks/scripts/rofi/launcher.rasi
 
 # change focus
 bindsym $mod+j focus left
@@ -134,7 +122,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-
 # switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -172,7 +159,7 @@ set $ws3 "3: mail"
 #for_window [class="Spotify"] move to workspace $ws5; workspace number 5
 for_window [class="^Spotify$"] move to workspace $ws2; workspace number 2; move workspace to output primary
 for_window [class="^Signal$"] move to workspace $ws1; workspace number 1; move workspace to output primary
-for_window [class="^Microsoft Teams - Preview$"] move to workspace $ws1; workspace number 1; move workspace to output primary
+for_window [class="^teams-for-linux$"] move to workspace $ws1; workspace number 1; move workspace to output primary
 for_window [class="^Evolution$"] move to workspace $ws3; workspace number 3; move workspace to output DP-1-1 primary
 
 # reload the configuration file
@@ -208,35 +195,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    status_command i3status
-	tray_output primary
-
-	colors {
-        	#background #21201C
-        	background #233038
-        	statusline #ffffff
-        	separator #666666
-
-        	focused_workspace  #ffbc14 #eda900 #000000
-        	active_workspace   #333333 #5f676a #ffffff
-        	inactive_workspace #333333 #222222 #888888
-        	urgent_workspace   #2f343a #900000 #ffffff
-        	binding_mode       #2f343a #900000 #ffffff
-    }
-}
-
-
 # Cycle through active workspaces
 bindsym $mod+ctrl+Right workspace next
 bindsym $mod+ctrl+Left workspace prev
 
 # Lock screen shortcut
-bindsym $mod+ctrl+l $exec i3lock --ignore-empty-password -c 233038
-#bindsym $mod+ctrl+l $exec /usr/local/bin/lock.sh
-
+bindsym $mod+ctrl+l $exec $locker
 
 # Float windows
 ## Find class/role names by runnning below and click when hovering the app/window.
@@ -245,6 +209,8 @@ bindsym $mod+ctrl+l $exec i3lock --ignore-empty-password -c 233038
 
 ## xloadimage, used in mutt, adquery
 for_window [class="^Xloadimage$"] floating enable
+# PulseAudio control
+for_window [class="^Pavucontrol$"] floating enable
 
 ## Always focus new terminals
 #for_window [class="^Terminator$"] focus
@@ -278,15 +244,39 @@ bindsym XF86AudioNext $exec playerctl next
 bindsym XF86MonBrightnessUp $exec brightness.py inc
 bindsym XF86MonBrightnessDown $exec brightness.py dec
 
-$exec feh --bg-fill ~/Pictures/wallpapers/active_i3_wallpaper.png
+$exec feh --bg-fill $wallpaper
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 ### COLORS ###
-client.focused          #a0a0a0 #1f4e6a #ffffff #ffffff   #b5b3ae
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #233038 #888888 #292d2e   #222222
+# class                 border  backgr. text    indicator child_border
+client.focused          #a0a0a0 #1f4e6a00 #ffffff #ffffff   #b5b3ae
+client.focused_inactive #333333 #5f676a99 #ffffff #484e50   #5f676a
+client.unfocused        #333333 #23303899 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
+
+# Borders
+# default_floating_border normal 1
+
+# Shows title bar
+# default_border normal 1
+# Hides title bar
+default_border pixel 1
+
+smart_borders on
+
+### GAPS
+# Space between windows and screen edges
+gaps inner 6px
+
+# Adds Xpx of extra space to the screen edges
+gaps outer 3px
+
+# Compensate for polybar
+gaps bottom 20px
+
+# When "on" no gaps will appear when single window or container
+smart_gaps off
 
 ### END config.base ###

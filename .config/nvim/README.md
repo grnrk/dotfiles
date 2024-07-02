@@ -1,8 +1,6 @@
 
 # Neovim
 
-Get Appimage **v0.5.1** from [Neovim on GitHub](https://github.com/neovim/neovim)
-
 ## Runtimepath
 
 Plugins and other stuff are installed to `.local/share/nvim/`.  

@@ -2,7 +2,7 @@
 Description=Monitor hotplug
 
 [Service]
-Type=simple
+Type=oneshot
 RemainAfterExit=no
 User=gorane
 ExecStart=/usr/local/bin/monitor-hotplug.sh
