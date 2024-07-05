@@ -240,3 +240,4 @@ libvirt/
 .config/helm
 .config/k9s
 .sdirs*
+.config/systemd/user/default.target.wants/

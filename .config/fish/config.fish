@@ -1,3 +1,5 @@
+# SSH agent
+set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 # vault # move this to local config
 set -gx VAULT_ADDR https://vault.se.axis.com
 # Ansible
