@@ -1,0 +1,301 @@
+
+include /etc/sway/config.d/*
+include ~/.config/sway/local.d/*
+
+# Uncomment below to disable Xwayland and go pure wayland
+# xwayland disable
+
+# mark xwayland windows
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+# Set keyboard layout
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+input "type:keyboard" {
+    xkb_layout "se"
+}
+
+input "type:touchpad" {
+    tap enabled
+    natural_scroll disabled
+}
+
+set $mod Mod4
+set $exec exec --no-startup-id
+set $terminal alacritty
+set $wallpaper ~/Pictures/wallpapers/active_i3_wallpaper.png
+set $locker 'swaylock -C ~/.config/swaylock/config'
+
+# This will lock your screen after 300 seconds of inactivity, then turn off
+exec swayidle -w \
+     timeout 300 $locker \
+     timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     before-sleep 'playerctl pause; $locker'
+
+# notification manager
+$exec dunst
+
+# Screen settings
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output eDP-1 resolution 1920x1080 position 0,0
+# output HDMI-A-1 resolution 2560x1440 position 1920,0
+output "*" bg $wallpaper fit
+
+# network manager
+exec_always nm-applet --indicator
+
+bar swaybar_command waybar
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block.
+#font pango:monospace 8
+font pango:Sans 8
+
+# default new window behaviour
+workspace_layout stacking
+
+popup_during_fullscreen smart
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal (i3-sensible-terminal uses x-terminal-emulator or $TERMINAL)
+bindsym $mod+Return $exec $terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Dunst close notification
+bindsym $mod+Escape exec dunstctl close
+
+# Rofi: Replace with wofi
+# Use # as separator since i3 dislikes commas in exec commands.
+# bindsym $mod+d exec rofi -modi "drun#run#ssh" -show drun
+# bindsym $mod+d exec rofi -no-config -no-lazy-grab -show drun -modi "drun#run" -theme ~/.config/polybar.themes/shapes/scripts/rofi/launcher.rasi
+bindsym $mod+d exec wofi
+# bindsym $mod+d exec fuzzel --fuzzy-max-length-discrepancy=1
+
+# window switching
+# See man 7 wofi: window switching
+bindsym $mod+Tab exec ~/.config/wofi/window-switcher.sh
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+colon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Move entire workspaces 
+bindsym $mod+ctrl+Shift+Left move workspace to output left
+bindsym $mod+ctrl+Shift+Right move workspace to output right
+# Move workspace one step to the right
+bindsym $mod+x move workspace to output right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Default Workspace names and application assignment
+# If we use "numbered" workspaces with names, any "move to workspace" operations
+# must use the number keyword as well. (ie: move to workspace number n)
+#
+# assign is preferred if it works with the application
+# https://i3wm.org/docs/userguide.html#assign_workspace
+set $ws1 "1: chat" 
+set $ws2 "2: music" 
+set $ws3 "3: mail" 
+#assign [class="Spotify"] $ws5
+#for_window [class="Spotify"] move to workspace $ws5; workspace number 5
+for_window [class="^Spotify$"] move to workspace $ws2; workspace number 2; move workspace to output primary
+for_window [class="^Signal$"] move to workspace $ws1; workspace number 1; move workspace to output primary
+for_window [class="^teams-for-linux$"] move to workspace $ws1; workspace number 1; move workspace to output primary
+
+# reload the configuration file
+bindsym $mod+Shift+r exec swaymsg reload
+# exit sway (logs you out of your wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Logout and exit session?' -B 'Yes, exit sway' 'swaymsg exit'
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Cycle through active workspaces
+bindsym $mod+ctrl+Right workspace next
+bindsym $mod+ctrl+Left workspace prev
+
+# Lock screen shortcut
+bindsym $mod+ctrl+l $exec $locker
+
+# Float windows
+# Find window info by running `swaymsg -t get_tree` while app is open.
+
+## xloadimage, used in mutt, adquery
+# May be removed when swayimg is used..
+for_window [class="^Xloadimage$"] floating enable
+# PulseAudio control
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="wdisplays"] floating enable
+
+## Always focus new terminals
+#for_window [class="^Terminator$"] focus
+#for_window [class="^x-terminal-emulator$"] focus
+#for_window [class="^X-terminal-emulator$"] focus
+
+# Scratchpad
+## Hide to scratchpad
+bindsym $mod+ctrl+h move scratchpad
+## Unhide scratchpad
+bindsym $mod+ctrl+u scratchpad show
+
+### Player control ###
+# Toggle spotify play/pause
+bindsym $mod+p $exec playerctl -p spotify play-pause
+
+### MEDIA CONTROLS ###
+
+# Volume
+
+# Used w i3, replaced with arch recommended below
+# bindsym XF86AudioRaiseVolume $exec amixer -q -c 0 set Master 2dB+ unmute
+# bindsym XF86AudioLowerVolume $exec amixer -q -c 0 set Master 2dB- unmute
+# #bindsym XF86AudioMute $exec mute-toggle
+# bindsym XF86AudioMute $exec amixer -q set Master toggle
+
+# New in sway, recommended by arch wiki
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Player
+bindsym XF86AudioPlay exec playerctl play-pause 
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+# Sreen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# Replace with grimshot if needed..
+# bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
+
+### COLORS ###
+# class                 border  backgr. text    indicator child_border
+# client.focused backgr. should be the same as waybars #workspaces button.focused background.
+client.focused          #a0a0a0 #157C78AA #ffffff #ffffff   #b5b3ae
+client.focused_inactive #333333 #5f676a55 #ffffff #484e50   #5f676a
+client.unfocused        #333333 #5f676a55 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.background       #ffffff
+
+# Borders
+# Enables title bars on floating windows (that are originally launched as floating)
+# default_floating_border normal 1
+
+# Shows title bar
+# default_border normal 1
+# Hides title bar
+default_border pixel 1
+
+smart_borders on
+
+# hide border when only one window
+hide_edge_borders --i3 smart
+
+### GAPS
+# Space between windows and screen edges
+gaps inner 6px
+
+# Adds Xpx of extra space to the screen edges
+gaps outer 3px
+
+# Compensate for bar
+gaps bottom 3px
+
+# When "on" no gaps will appear when single window or container
+smart_gaps off

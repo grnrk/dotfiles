@@ -1,0 +1,5 @@
+# Start nextcloud client
+# $exec --no-startup-id nextcloud-client
+
+# Floating window applications
+for_window [class="^(C|c)hromium$"] floating enable

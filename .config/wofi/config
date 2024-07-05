@@ -1,0 +1,8 @@
+dmenu=true
+term=alacritty
+show=drun,run
+allow-images=true
+insensitive=true
+# display_generic=true
+width=750
+height=300

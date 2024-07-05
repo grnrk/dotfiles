@@ -1,0 +1,49 @@
+daemonize
+
+indicator-caps-lock
+
+image="${HOME}/Pictures/wallpapers/active_i3_wallpaper.png"
+
+ignore-empty-password
+
+font=monospace
+font-size=16
+
+indicator-thickness=1
+indicator-radius=80
+
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+line-uses-inside
+# line-color=00000000
+# line-clear-color=00000000
+# line-caps-lock-color=00000000
+# line-ver-color=00000000
+# line-wrong-color=00000000
+
+ring-color=00897bE6
+ring-clear-color=00897bE6
+ring-caps-lock-color=caaa5bAA
+ring-ver-color=7de4d9AA
+ring-wrong-color=223836
+
+key-hl-color=4DFFFFbb
+bs-hl-color=EF1A00CC
+caps-lock-key-hl-color=4DFFFFbb
+# caps-lock-bs-hl-color=
+
+separator-color=00897bE6
+
+# text-color=00C4B0FF
+# text-ver-color=00C4B0FF
+# text-wrong-color=00C4B0FF
+# text-clear-color=00C4B0FF
+# text-caps-lock-color=00C4B0FF
+text-color=00000000
+text-ver-color=00000000
+text-wrong-color=00000000
+text-clear-color=00000000
+text-caps-lock-color=00000000

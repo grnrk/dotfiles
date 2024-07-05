@@ -1,0 +1,18 @@
+profile hdmi-1 {
+	output eDP-1 resolution 1920x1080 enable position 0,0
+	output HDMI-A-1 resolution 2560x1440 enable position 1920,0
+}
+
+profile dp-1 {
+	output eDP-1 resolution 1920x1080 enable position 0,0
+	output DP-1 position 1920,0
+}
+
+profile dp-2 {
+	output eDP-1 resolution 1920x1080 enable position 0,0
+	output DP-2 position 1920,0
+}
+
+profile edp-1 {
+	output eDP-1 resolution 1920x1080 enable position 0,0
+}
