@@ -32,7 +32,7 @@ case $1 in
       'neovim'
       'python3-pynvim'
       'python3-flake8'
-      'mypy'
+      'python3-mypy'
       'python3-virtualenv'
       'yamllint'
       'black'
@@ -49,10 +49,10 @@ case $1 in
   ;;  
 esac
 
-echo Installing packages for $1
+echo Installing packages for "$1"
 
-for package in ${PACKAGES[@]}; do
-  if ! dpkg -l $package &> /dev/null; then
-    sudo apt install -yq $package
+for package in "${PACKAGES[@]}"; do
+  if ! dpkg -l "$package" &> /dev/null; then
+    sudo apt install -yq "$package"
   fi
 done
