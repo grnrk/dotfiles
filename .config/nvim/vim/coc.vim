@@ -79,9 +79,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " nmap <leader>f  <Plug>(coc-format-selected)
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
-" Below don't work.. :(
+" Leader don't work.. :(
 " nmap <Leader>f :Format<CR>
 " nnoremap <silent> <leader>f :call CocActionAsync('format')<CR>
+" But others do..
+" nnoremap <C-i> :call CocActionAsync('format')<CR>
+nnoremap <C-i> :Format<CR>
 
 " see `:h coc-status` for integrations with external statusline plugins
 let g:lightline = {

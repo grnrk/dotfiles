@@ -50,6 +50,7 @@
 #waybar {
     /* background: #323232; */
     background: transparent;
+    /* color: rgba(102, 220, 105, 99); */
     color: white;
     font-family: Cantarell, Noto Sans, sans-serif;
     font-size: 13px;
