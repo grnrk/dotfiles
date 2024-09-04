@@ -137,7 +137,7 @@ end
 if &t_Co > 255
    if s:molokai_original == 1
       hi Normal                   ctermbg=234
-      hi CursorLine               ctermbg=235   cterm=none
+      hi CursorLine               ctermbg=236   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    else
       hi Normal       ctermfg=252 ctermbg=233
@@ -195,7 +195,7 @@ if &t_Co > 255
    hi Search          ctermfg=0   ctermbg=222   cterm=NONE
 
    " marks column
-   hi SignColumn      ctermfg=118 ctermbg=235
+   hi SignColumn      ctermfg=118 ctermbg=236
    hi SpecialChar     ctermfg=161               cterm=bold
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81
@@ -220,7 +220,7 @@ if &t_Co > 255
 
    hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
    hi VisualNOS                   ctermbg=238
-   hi Visual                      ctermbg=235
+   hi Visual                      ctermbg=236
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
