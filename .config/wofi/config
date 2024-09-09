@@ -1,6 +1,6 @@
 dmenu=true
 term=alacritty
-show=drun,run
+show=drun
 allow-images=true
 insensitive=true
 # display_generic=true
