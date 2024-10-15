@@ -74,7 +74,7 @@ bindsym $mod+d exec wofi --allow-images
 # bindsym $mod+d exec fuzzel --fuzzy-max-length-discrepancy=1
 
 # Pass menu
-bindsym $mod+p exec wofi-pass
+bindsym $mod+p exec wofi-pass --squash
 
 # window switching
 # See man 7 wofi: window switching
