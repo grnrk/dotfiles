@@ -73,6 +73,9 @@ bindsym $mod+Escape exec dunstctl close
 bindsym $mod+d exec wofi --allow-images
 # bindsym $mod+d exec fuzzel --fuzzy-max-length-discrepancy=1
 
+# Pass menu
+bindsym $mod+p exec wofi-pass
+
 # window switching
 # See man 7 wofi: window switching
 # bindsym $mod+Tab exec ~/.config/wofi/window-switcher.sh
@@ -234,7 +237,7 @@ bindsym $mod+ctrl+u scratchpad show
 
 ### Player control ###
 # Toggle spotify play/pause
-bindsym $mod+p $exec playerctl -p spotify play-pause
+# bindsym $mod+p $exec playerctl -p spotify play-pause
 
 ### MEDIA CONTROLS ###
 
