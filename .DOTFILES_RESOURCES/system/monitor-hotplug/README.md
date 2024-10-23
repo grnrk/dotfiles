@@ -1,3 +1,7 @@
+
+
+NOTE: This is not needed with sway, since sway remembers workspace display placement. In sway, this Just Works. 
+
 # Monitor hotplugging with i3wm
 
 UDEV is used to detect monitor changes and trigger a systemd service, which runs a script to turn on/off monitors when (dis-)connected.
