@@ -1,6 +1,8 @@
 " Vim Plug
 " https://github.com/junegunn/vim-plug
 call plug#begin()
+" No more set paste!
+Plug 'ConradIrwin/vim-bracketed-paste'
 " Make sure you use single quotes
 Plug 'ctrlpvim/ctrlp.vim'
 " General folding improved

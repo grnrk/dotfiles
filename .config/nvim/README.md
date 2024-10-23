@@ -8,6 +8,8 @@ Run `:set runtimepath?` to see which other dirs are sourced.
 
 ## COC
 
+Requires, node + npm. (Use nvm to install...)  
+
 Update/install all extensions in `extensions/package.json`  
 `:CocCommand extensions.forceUpdateAll`
 

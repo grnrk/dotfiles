@@ -1,6 +1,9 @@
 
 let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-vimlsp', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-prettier' ]
 
+" Disable startup warnings since system neovim is below reccomended version and appimage neovim makes color go ugh.
+let g:coc_disable_startup_warning = 1
+
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
 set updatetime=300

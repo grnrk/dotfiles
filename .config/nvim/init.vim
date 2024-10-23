@@ -24,7 +24,7 @@ set noswapfile
 set lazyredraw
 set ttyfast
 set title
-set paste
+" set paste
 set pastetoggle=<Leader>p
 set cursorline
 " dont continue with comment after enter in insert or o/O
@@ -54,7 +54,7 @@ set wildmenu
 
 " File extension based settings
 autocmd BufNewFile,BufRead *.py,*.sh
-  \ set paste!
+  \ set
   \ expandtab
   \ autoindent
   \ textwidth=100
@@ -78,7 +78,7 @@ autocmd BufNewFile,BufRead *.md,*.markdown,*.MD
 
 " limit textwidth for git commit edit message
 autocmd BufNewFile,BufRead COMMIT_EDITMSG
-  \ set paste!
+  \ set
   \ textwidth=72
 
 " Open help windows in vertical split to the right
@@ -123,10 +123,10 @@ nmap <silent> <C-A-Down> :wincmd J<CR>
 nmap <silent> <C-A-Left> :wincmd H<CR>
 nmap <silent> <C-A-Right> :wincmd L<CR>
 " window resize keybindings
-nmap <silent> <Leader>> :vertical resize +10<CR>
-nmap <silent> <Leader>< :vertical resize -10<CR>
-nmap <silent> <Leader>+ :resize +10<CR>
-nmap <silent> <Leader>- :resize -10<CR>
+nmap <silent> <Leader><Left> :vertical resize +10<CR>
+nmap <silent> <Leader><Right> :vertical resize -10<CR>
+nmap <silent> <Leader><Up> :resize +10<CR>
+nmap <silent> <Leader><Down> :resize -10<CR>
 
 " disable mouse
 set mouse=
