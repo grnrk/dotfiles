@@ -7,7 +7,7 @@ WINIT_X11_SCALE_FACTOR = "1"
 
 
 ### SHELL ###
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/usr/bin/fish"
 
@@ -96,3 +96,5 @@ bindings = [
   { key = "Up", mods = "Control|Shift", mode = "~Alt", action = "ScrollLineUp" },
   { key = "Down", mods = "Control|Shift", mode = "~Alt", action = "ScrollLineDown" },
 ]
+
+[terminal]
