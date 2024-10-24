@@ -91,7 +91,7 @@ nnoremap <C-i> :Format<CR>
 
 " see `:h coc-status` for integrations with external statusline plugins
 let g:lightline = {
-      \ 'colorscheme': 'default',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]

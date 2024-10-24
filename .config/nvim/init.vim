@@ -138,10 +138,15 @@ set switchbuf=usetab,newtab
 " COLORS!
 " enable 256 colors
 set t_Co=256
+set termguicolors
 
-" MOLOKAI
-let g:molokai_original = 1
-colorscheme molokai
+" Color scheme
+" let g:molokai_original = 1
+" colorscheme molokai
+
+let g:nord_disable_background = v:true
+let g:nord_italic = v:false
+colorscheme nord
 
 " NERDTree
 map <C-t> :NERDTreeToggle<CR>
