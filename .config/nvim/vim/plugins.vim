@@ -7,6 +7,9 @@ call plug#begin()
 Plug 'shaunsingh/nord.nvim'
 " Original with less settings: https://github.com/nordtheme/vim
 
+" Markdown highlights
+Plug 'lukas-reineke/headlines.nvim'
+
 " No more set paste!
 Plug 'ConradIrwin/vim-bracketed-paste'
 

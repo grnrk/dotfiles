@@ -3,10 +3,6 @@
 set nocompatible
 filetype plugin indent on
 
-" Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
-silent! helptags ALL
-
 " Load configuration
 " Plugins
 source ~/.config/nvim/vim/plugins.vim
@@ -14,6 +10,10 @@ source ~/.config/nvim/vim/plugins.vim
 source ~/.config/nvim/vim/coc.vim
 " VimWiki
 source ~/.config/nvim/vim/vimwiki.vim
+
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
 
 syntax off  " Syntax hl handled by plugin
 
@@ -162,3 +162,6 @@ map <leader>mds :InstantMarkdownStop<CR>
 " let g:instant_markdown_python = 1  " We use npm instant-markdown-d now...
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_browser = "chromium"
+
+" Load .config/nvim/lua/init.lua
+lua require('init')
