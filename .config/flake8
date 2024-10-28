@@ -1,5 +1,6 @@
 [flake8]
+# Black default length is 88
 max-line-length = 88
 ignore = F403,F405,W503
-extend-ignore = E203
+extend-ignore = E203,E701
 # https://flake8.pycqa.org/en/latest/user/error-codes.html

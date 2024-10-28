@@ -1,6 +1,7 @@
--- Markdown prview in terminal
+-- Markdown preview in terminal
 require('glow').setup()
 
+-- Prerequisite (icon provider) for render-markdown
 require("nvim-web-devicons").setup()
 -- Render-markdown settings
 require('render-markdown').setup({
@@ -37,13 +38,14 @@ require('render-markdown').setup({
 -- TreeSitter
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = { "vim", "vimdoc", "markdown", "markdown_inline", "html" },
+  ensure_installed = { "vim", "vimdoc", "markdown", "markdown_inline", "html", "bash", "json" },
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = false,
 
   highlight = {
+    -- `false` will disable the whole extension
     enable = true,
 
     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to

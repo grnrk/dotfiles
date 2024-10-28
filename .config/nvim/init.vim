@@ -146,6 +146,7 @@ set termguicolors
 
 let g:nord_disable_background = v:true
 let g:nord_italic = v:false
+let g:nord_bold = v:false
 colorscheme nord
 
 " NERDTree
