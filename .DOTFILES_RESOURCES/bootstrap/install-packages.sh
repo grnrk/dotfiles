@@ -17,6 +17,7 @@ case $1 in
       'xss-lock'
       'network-manager-gnome'
       'brightness-udev'
+      'fonts-font-awesome'
       )
   ;;
   "x")
