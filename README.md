@@ -19,9 +19,9 @@ Available classes:
 
 Run; `yadm bootstrap`
 
-## .DOTFILES_RESOURCES
+## Resources
 
-This directory holds everything that is related to dotfiles configuration and/or other things that always should be in place on any computer.
+Additional bootstrap related resources can be found under `.config/yadm`.
 
 ### Layout
 
@@ -31,7 +31,7 @@ This directory holds everything that is related to dotfiles configuration and/or
 
 Files in the bin directory may be appended with an ending of _.install_ to be copied instead of symlinked.
 
-* **/bootstrap** - Scripts executed from .yadm/bootstrap.
+* **/bootstrap.d** - Scripts executed from .yadm/bootstrap.
 
 * **/etc** - Configuration files for /etc.
 
