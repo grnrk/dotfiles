@@ -6,9 +6,6 @@ Run; `yadm clone <THIS_REPO>`
 
 _No files in the repository may exist locally or clone will fail._
 
-**Define if laptop**\
-Set the hostname of laptop in the _LAPTOPS_ variable in .yadm/bootstrap.
-
 **Set class**\
 `yadm config local.class <class>`
 _Only one local class at the time is configurable_
@@ -28,10 +25,9 @@ This directory holds everything that is related to dotfiles configuration and/or
 
 ### Layout
 
-* **/bin** -  Executables here are selectively symlinked to /usr/local/bin via .yadm/bootstrap.
-  * **i3**  - Bins that are exclusively needed with i3wm.
-  * **nox** - Bins that should be available on _all_ systems.
-  * **x**   - Bins for any computer with a display.
+* **/bin** -  Executables here are selectively symlinked to /usr/local/bin.
+  * **nodisplay** - Bins that should be available on _all_ systems.
+  * **display**   - Bins for any computer with a display.
 
 Files in the bin directory may be appended with an ending of _.install_ to be copied instead of symlinked.
 

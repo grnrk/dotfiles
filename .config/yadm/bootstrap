@@ -1,17 +1,6 @@
 #!/bin/bash
 
-BOOTSTRAP_DIR=~/.DOTFILES_RESOURCES/bootstrap
-
-is_laptop() {
-    LAPTOPS=('laplnxgorane' 'goretop' 'lap5cg1384xxq')
-    HOST=$(hostname)
-    for laptop in "${LAPTOPS[@]}"; do
-        if [ "$HOST" == "$laptop" ]; then
-            return 0
-        fi
-    done
-    return 1
-}
+BOOTSTRAP_DIR=~/.config/yadm/bootstrap.d
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
@@ -19,27 +8,16 @@ cd "$HOME" || exit
 echo "Init submodules"
 yadm submodule update --recursive --init
 
-# IF LAPTOP
-if is_laptop; then
-    LAPTOP="true"
-    $BOOTSTRAP_DIR/laptop-config.sh
-fi
-
-# IF X
+# If display is present
 if [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
-    $BOOTSTRAP_DIR/install-bins.sh x
-    $BOOTSTRAP_DIR/install-packages.sh x
-    # IF i3WM
-    if [[ "$XDG_CURRENT_DESKTOP" == "i3" || "$XDG_CURRENT_DESKTOP" == "i3x" ]]; then
-        $BOOTSTRAP_DIR/install-bins.sh i3
-        $BOOTSTRAP_DIR/install-packages.sh i3
-        $BOOTSTRAP_DIR/install-i3-resources.sh
-        if [ "$LAPTOP" == "true" ]; then
-            $BOOTSTRAP_DIR/deploy-monitor-hotplug.sh
-        fi
+    $BOOTSTRAP_DIR/install-bins.sh display
+    $BOOTSTRAP_DIR/install-packages.sh display
+    # IF sway
+    if [[ -n "$WAYLAND_DISPLAY" ]]; then
+        $BOOTSTRAP_DIR/install-packages.sh sway
     fi
 fi
 
 # Always nox thingies
-$BOOTSTRAP_DIR/install-bins.sh nox
-$BOOTSTRAP_DIR/install-packages.sh nox
+$BOOTSTRAP_DIR/install-bins.sh nodisplay
+$BOOTSTRAP_DIR/install-packages.sh nodisplay

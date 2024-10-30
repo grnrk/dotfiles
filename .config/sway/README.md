@@ -2,6 +2,8 @@
 
 ## Packages
 
+(These should be included in yadm bootstrap package list)
+
 - sway
 - swaylock
 - swayidle

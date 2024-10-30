@@ -1,8 +1,0 @@
-[Unit]
-Description=Monitor hotplug
-
-[Service]
-Type=oneshot
-RemainAfterExit=no
-User=gorane
-ExecStart=/usr/local/bin/monitor-hotplug.sh

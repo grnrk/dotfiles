@@ -15,10 +15,6 @@
 .config/Signal/
 .config/evolution/
 .config/deluge/
-.config/i3/config
-.config/i3/config.local
-.config/i3/config.*.bak
-.config/i3status/config
 .vim/.netrwhist
 .vim/undo/
 .vim/plugged/
@@ -127,7 +123,6 @@ VirtualBox VMs/
 .qalculate/
 .putty/
 .electron/
-.i3/workspace_map
 .dbus/
 .aws/
 .awx-env
@@ -231,7 +226,6 @@ __pycache__/*
 .config/mutt/*cache
 .config/mutt/**/*tokens
 .config/mutt/.cal
-i3x-xdg-terminals.list
 .zabbix-cli/
 libvirt/
 .config/.gsd-keyboard.settings-ported

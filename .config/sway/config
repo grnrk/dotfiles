@@ -243,13 +243,7 @@ bindsym $mod+ctrl+u scratchpad show
 
 # Volume
 
-# Used w i3, replaced with arch recommended below
-# bindsym XF86AudioRaiseVolume $exec amixer -q -c 0 set Master 2dB+ unmute
-# bindsym XF86AudioLowerVolume $exec amixer -q -c 0 set Master 2dB- unmute
-# #bindsym XF86AudioMute $exec mute-toggle
-# bindsym XF86AudioMute $exec amixer -q set Master toggle
-
-# New in sway, recommended by arch wiki
+# For sway as recommended by arch wiki
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -3%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle

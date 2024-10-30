@@ -7,7 +7,7 @@ fi
 
 BIN_DIR_SPEC=$1
 DST_BIN_DIR=/usr/local/bin
-SRC_BIN_DIR=~/.DOTFILES_RESOURCES/bin/$BIN_DIR_SPEC
+SRC_BIN_DIR=~/.config/yadm/bin/$BIN_DIR_SPEC
 
 test -d $SRC_BIN_DIR ||  {
     echo $SRC_BIN_DIR not found!

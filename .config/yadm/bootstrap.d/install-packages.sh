@@ -6,21 +6,24 @@ if [ "$#" -ne "1" ]; then
 fi
 
 case $1 in
-  "i3")
+  "sway")
     PACKAGES=(
-      'picom'
+      'sway'
+      'swaylock'
+      'swayidle'
+      'swayimg'
+      'waybar'
+      'wofi'
+      'brightnessctl'
+      'wdisplays'
+      'grimshot'
+      'wofi-pass'
       'dunst'
-      'rofi'
-      'feh'
-      'qalc'
-      'scrot'
-      'xss-lock'
       'network-manager-gnome'
-      'brightness-udev'
       'fonts-font-awesome'
       )
   ;;
-  "x")
+  "display")
     PACKAGES=(
       'adapta-gtk-theme'
       'ddgr'
@@ -28,7 +31,7 @@ case $1 in
       'playerctl'
       )
   ;;
-  "nox")
+  "nodisplay")
     PACKAGES=(
       'neovim'
       'python3-pynvim'
@@ -42,6 +45,7 @@ case $1 in
       'texlive-xetex'
       'shellcheck'
       'fish'
+      'pass'
       )
   ;;
   *)
