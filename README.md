@@ -39,6 +39,15 @@ Files in the bin directory may be appended with an ending of _.install_ to be co
 
 ## Git submodules
 
+### Updating submodule to a new tag/branch
+
+`cd path/to/submodule`  
+`git co <tag/branch>`  
+`cd path/to/parentgit`  
+`git add path/to/submodule`  
+`git commit -am "updated to <tag/branch>"`  
+
+
 **Clone incl. submodules**
 
 ```
