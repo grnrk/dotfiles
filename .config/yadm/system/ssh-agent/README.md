@@ -7,7 +7,7 @@
 
 ## Installation
 
-1. ssh-agent.service is installed under: `~/.config/systemd/user/ssh-agent.service`
+1. ssh-agent.service is installed (and under version control) under: `~/.config/systemd/user/ssh-agent.service`
 2. Run `systemctl --user daemon-reload && systemctl --user enable ssh-agent.service`
 3. Set global envvar `SSH_AUTH_SOCK` to `"$XDG_RUNTIME_DIR/ssh-agent.socket"`  
    (In fish.config, .bashrc or equivalent.)
