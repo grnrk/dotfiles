@@ -22,7 +22,7 @@ input "type:touchpad" {
 set $mod Mod4
 set $exec exec --no-startup-id
 set $terminal alacritty
-set $wallpaper ~/Pictures/wallpapers/active_i3_wallpaper.png
+set $wallpaper ~/.config/yadm/wallpaper/active_i3_wallpaper.png
 set $locker 'swaylock -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
