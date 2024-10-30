@@ -66,12 +66,8 @@ bindsym $mod+Shift+q kill
 # Dunst close notification
 bindsym $mod+Escape exec dunstctl close
 
-# Rofi: Replace with wofi
-# Use # as separator since i3 dislikes commas in exec commands.
-# bindsym $mod+d exec rofi -modi "drun#run#ssh" -show drun
-# bindsym $mod+d exec rofi -no-config -no-lazy-grab -show drun -modi "drun#run" -theme ~/.config/polybar.themes/shapes/scripts/rofi/launcher.rasi
+# Wofi
 bindsym $mod+d exec wofi --allow-images
-# bindsym $mod+d exec fuzzel --fuzzy-max-length-discrepancy=1
 
 # Pass menu
 bindsym $mod+p exec wofi-pass --squash
