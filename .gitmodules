@@ -1,3 +1,3 @@
-[submodule ".DOTFILES_RESOURCES/bin/nox/diff-so-fancy"]
+[submodule ".config/yadm/bin/nodisplay/diff-so-fancy"]
 	path = .config/yadm/bin/nodisplay/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
