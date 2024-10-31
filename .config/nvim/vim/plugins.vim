@@ -47,7 +47,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-fugitive'
 
 " Character pairing (cannot be used simultaneousley with <CR> for accepting selection in COC)
-" Plug 'tmsvg/pear-tree'
+Plug 'tmsvg/pear-tree'
 
 " Snippets library for coc-snippets
 Plug 'honza/vim-snippets'

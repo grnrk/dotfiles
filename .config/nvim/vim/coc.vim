@@ -16,26 +16,23 @@ set signcolumn=yes
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file
 
-"" Original tab completion (No snippets)
-" inoremap <silent><expr> <TAB>
-"       \ coc#pum#visible() ? coc#pum#next(1) :
-"       \ CheckBackspace() ? "\<Tab>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-" 
-" " Make <CR> to accept selected completion item or notify coc.nvim to format
-" " <C-g>u breaks current undo, please make your own choice
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-"" END Oririginal tab completion
-
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-" <CR> for accepting selection does not work with autopairing plugins 
+
+" PearTree interferes with COC <CR> for accepting selection
+" Below disables automapping so we can fix COC mapping.
+" See https://github.com/tmsvg/pear-tree/issues/33 for alternative solutions 
+let g:pear_tree_map_special_keys = 0
+" Default mappings:
+imap <BS> <Plug>(PearTreeBackspace)
+imap <Esc> <Plug>(PearTreeFinishExpansion)
+" Get PearTreeExpand working with coc.nvim
+imap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<Plug>(PearTreeExpand)"
+
 
 " Jump to next position in snippet
 let g:coc_snippet_next = '<tab>'
