@@ -28,11 +28,3 @@ Managed with [Vim Plug](https://github.com/junegunn/vim-plug)
 **Dependencies:**  
 
 - Nodejs: instant-markdown-d
-
-## VimWiki
-
-### MD2HTML
-
-Markdown to HTML conversion is provided by
-[`vimwiki_markdown`](https://github.com/WnP/vimwiki_markdown/)  
-This is enabled in the `custom_wiki2html` paramter.

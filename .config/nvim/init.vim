@@ -8,8 +8,6 @@ filetype plugin indent on
 source ~/.config/nvim/vim/plugins.vim
 " COC
 source ~/.config/nvim/vim/coc.vim
-" VimWiki
-source ~/.config/nvim/vim/vimwiki.vim
 
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.

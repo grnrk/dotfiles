@@ -28,8 +28,6 @@ alias tmux "env TERM=screen-256color tmux"
 alias wiki "ddgr --np --gb !w $argv[1]"
 alias ddg "ddgr --np --gb !duckduckgo $argv[1]"
 alias vim "nvim"
-alias vw "vim -c VimwikiIndex"
-alias vwd "vim -c VimwikiDiaryIndex"
 alias mutt "neomutt"
 
 ### GIT PROMPT CONFIGURATION
