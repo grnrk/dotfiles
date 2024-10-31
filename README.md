@@ -47,46 +47,45 @@ Files in the bin directory may be appended with an ending of _.install_ to be co
 `git add path/to/submodule`  
 `git commit -am "updated to <tag/branch>"`  
 
+### Clone incl. submodules
 
-**Clone incl. submodules**
-
-```
+```text
 git clone --recurse-submodules <repo>
 ```
 
-**Adding new submodules**
+### Adding new submodules
 
-```
+```text
 git submodule add <GIT-REMOTE> <LOCAL_PATH>
 ```
 
-**Install (already cloned repository)**
+### Install (already cloned repository)
 
-```
+```text
 git submodule update --init --recursive
 ```
 
-**Update**
+### Update
 
-```
+```text
 git pull --recurse-submodules
 ```
 
-**Remove**
+### Remove
 
-```
+```text
 git submodule deinit <path_to_submodule>
 git rm <path_to_submodule>
 ```
 
-# Linux
+## Linux
 
-## Keychron keyboard
+### Keychron keyboard
 
-### Function keys
+#### Function keys
+
 <https://mikeshade.com/posts/keychron-linux-function-keys/>
 
 > echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
 >
 > sudo update-initramfs -u
-
