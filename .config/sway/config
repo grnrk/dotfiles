@@ -23,13 +23,15 @@ set $mod Mod4
 set $exec exec --no-startup-id
 set $terminal alacritty
 set $wallpaper ~/.config/yadm/wallpaper/active_i3_wallpaper.png
-set $locker 'swaylock -C ~/.config/swaylock/config'
+set $locker 'swaylock --daemonize --config ~/.config/swaylock/config'
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
+# Idle locker
 exec swayidle -w \
      timeout 300 $locker \
-     timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-     before-sleep 'playerctl pause; $locker'
+     timeout 420 'swaymsg "output * dpms off"' \
+          resume 'swaymsg "output * dpms on"' \
+     before-sleep 'playerctl pause' \
+     before-sleep $locker
 
 # notification manager
 $exec dunst
