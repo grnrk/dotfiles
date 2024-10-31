@@ -1,3 +1,4 @@
+# dunstrc
 [global]
     font = "Roboto 10"
     allow_markup = yes
