@@ -13,11 +13,11 @@ if [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
     $BOOTSTRAP_DIR/install-bins.sh display
     $BOOTSTRAP_DIR/install-packages.sh display
     # IF sway
-    if [[ -n "$WAYLAND_DISPLAY" ]]; then
+    if [[ "$XDG_SESSION_DESKTOP" == "sway" ]]; then
         $BOOTSTRAP_DIR/install-packages.sh sway
     fi
 fi
 
-# Always nox thingies
+# Install on any computer
 $BOOTSTRAP_DIR/install-bins.sh nodisplay
 $BOOTSTRAP_DIR/install-packages.sh nodisplay
