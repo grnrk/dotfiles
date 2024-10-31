@@ -86,6 +86,8 @@ git rm <path_to_submodule>
 
 <https://mikeshade.com/posts/keychron-linux-function-keys/>
 
-> echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
->
-> sudo update-initramfs -u
+```bash
+echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
+
+sudo update-initramfs -u
+```
