@@ -21,6 +21,8 @@ case $1 in
       'dunst'
       'network-manager-gnome'
       'fonts-font-awesome'
+      'pipewire'
+      'pipewire-audio'
       )
   ;;
   "display")
