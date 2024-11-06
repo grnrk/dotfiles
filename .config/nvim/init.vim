@@ -73,6 +73,7 @@ autocmd BufNewFile,BufRead *.md,*.markdown,*.MD
   \ tabstop=2
   \ softtabstop=2
   \ shiftwidth=2
+  \ nofoldenable!
 
 " limit textwidth for git commit edit message
 autocmd BufNewFile,BufRead COMMIT_EDITMSG
