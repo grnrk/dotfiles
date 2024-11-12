@@ -2,7 +2,7 @@ daemonize
 
 indicator-caps-lock
 
-image="${HOME}/Pictures/wallpapers/active_i3_wallpaper.png"
+image="${HOME}/.config/yadm/wallpaper/active_i3_wallpaper.png"
 
 ignore-empty-password
 
