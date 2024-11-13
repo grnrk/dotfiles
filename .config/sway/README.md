@@ -12,6 +12,7 @@
 - wofi
 - fonts-font-awesome
 - brightnessctl
+- brightness-udev
 - wdisplays - GUI display configuration
 - grimshot
 - wofi-pass - wofi menu integration to pass

@@ -15,6 +15,7 @@ case $1 in
       'waybar'
       'wofi'
       'brightnessctl'
+      'brightness-udev'
       'wdisplays'
       'grimshot'
       'wofi-pass'

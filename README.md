@@ -80,6 +80,12 @@ git rm <path_to_submodule>
 
 ## Linux
 
+### Brightness
+
+`brightnessctl` is used for adjusting screen brightness levels.  
+`brightness-udev` installs UDEV rules to allow rootless modification of screen brightness and led lights.  
+This means that $USER must be added to the `video` group (but this is probably done by default by installing the package?)
+
 ### Keychron keyboard
 
 #### Function keys
@@ -91,3 +97,4 @@ echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
 
 sudo update-initramfs -u
 ```
+
