@@ -13,7 +13,7 @@ end
 # editor
 set -gx EDITOR nvim
 # path
-set -gx PATH /sbin /usr/sbin /usr/local/sbin ~/.local/bin $PATH
+set -gx PATH ~/.local/bin ~/.cargo/bin $PATH
 # term 
 # Let TERM be set by resp. terminal
 #set -gx TERM xterm-256color
