@@ -41,4 +41,6 @@ rsync -qaz --delete --inplace --backup \
 --exclude=".adquery.ini" \
 --exclude=".ansible_vault_pass" \
 --exclude=".local/share/fish/fish_history*" \
+--exclude="vimwiki.disabled/" \
+--exclude="README.md" \
 $src ${trg}/full/
