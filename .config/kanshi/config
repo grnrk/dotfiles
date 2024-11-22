@@ -1,0 +1,13 @@
+# output eDP-1 alias $laptop position 0,0 mode 1920x1080 scale 1 transform normal adaptive_sync off
+
+profile workdesk {
+    # output $laptop
+    output eDP-1 enable position 0,0 mode 1920x1080 scale 1
+    output "Dell Inc. DELL U2715H GH85D73R0N5S" scale 1 mode 2560x1440@59.951Hz
+}
+
+profile random-hdmi {
+    # output $laptop
+    output eDP-1 enable position 0,0 mode 1920x1080 scale 1
+    output HDMI-A-1 position 1920,0 scale 1 mode 1920x1080
+}
