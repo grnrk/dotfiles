@@ -256,8 +256,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
-# Replace with grimshot if needed..
-# bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
+# Screenshot
+bindsym Print exec grimshot --notify save area ~/Pictures/screenshot_$(date +"%Y%m%d-%H%M").png
+bindsym $mod+ctrl+p exec grimshot --notify save area ~/Pictures/screenshot_$(date +"%Y%m%d-%H%M").png
 
 ### COLORS ###
 # class                 border  backgr. text    indicator child_border
