@@ -54,6 +54,14 @@ nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
 nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
 " nmap <silent> <C-j> <Plug>(coc-diagnostic-next-error)
 
+" Toggle type hints (hints must be enabled in coc-settings.json)
+nnoremap <silent> I :call CocAction('runCommand', 'document.toggleInlayHint')<CR>
+
+" Disable type hints at startup
+autocmd User CocNvimInit
+  \ :call CocAction('runCommand', 'document.toggleInlayHint')
+
+
 " GoTo code navigation
 " nmap <silent> gd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
