@@ -1,3 +1,5 @@
 default-timeout=10000
 font=Roboto 10
-background-color=#7F7F7F99
+background-color=#017078EE
+border-color=#6ABFC5AA
+border-radius=2
