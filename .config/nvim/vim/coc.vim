@@ -54,12 +54,24 @@ nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
 nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
 " nmap <silent> <C-j> <Plug>(coc-diagnostic-next-error)
 
+" Disable type hints at startup
+" Runs only on filetyepes where hints are expected, defined in `hints_filetypes`
+" using the ToggleInlayHints function. Otherwise, just use this:
+" autocmd User CocNvimInit call CocAction('runCommand', 'document.toggleInlayHint')
+let g:hints_filetypes = ['python']
+
+function! ToggleInlayHints()
+    if index(g:hints_filetypes, &ft)!= -1
+        call CocActionAsync('runCommand', 'document.toggleInlayHint')
+    endif
+endfunction
+
+autocmd User CocNvimInit call ToggleInlayHints()
+" autocmd VimEnter,BufNew,BufNewFile * call CocAction('runCommand', 'document.toggleInlayHint')<CR>
+
 " Toggle type hints (hints must be enabled in coc-settings.json)
 nnoremap <silent> I :call CocAction('runCommand', 'document.toggleInlayHint')<CR>
-
-" Disable type hints at startup
-autocmd User CocNvimInit
-  \ :call CocAction('runCommand', 'document.toggleInlayHint')
+" nnoremap <silent> I :call ToggleInlayHints()<CR>
 
 
 " GoTo code navigation

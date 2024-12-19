@@ -55,7 +55,6 @@ autocmd BufNewFile,BufRead *.py,*.sh
   \ set
   \ expandtab
   \ autoindent
-  \ textwidth=100
   \ tabstop=4
   \ softtabstop=4
   \ shiftwidth=4
