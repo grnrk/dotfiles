@@ -5,6 +5,7 @@ set -gx VAULT_ADDR https://vault.se.axis.com
 # Ansible
 set -gx ANSIBLE_PIPELINING True
 set -gx ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible_vault_pass
+set -gx KUBECONFIG (ls -1 ~/.kube/config-* | paste -sd ":" -)
 # Load local config
 if [ -f $HOME/.config/fish/local_config.fish ]
     source $HOME/.config/fish/local_config.fish
