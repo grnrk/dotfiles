@@ -45,7 +45,7 @@ nmap <space> za
 " Toggle all folding
 nmap <C-f> zi
 " Filetypes with folding enabled
-let g:markdown_folding = 1
+" let g:markdown_folding = 1
 " Tab completion + status bar display
 "set wildmode=longest,list,full
 set wildmenu
