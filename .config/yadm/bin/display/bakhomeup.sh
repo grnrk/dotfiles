@@ -43,4 +43,5 @@ rsync -qaz --delete --inplace --backup \
 --exclude=".local/share/fish/fish_history*" \
 --exclude="vimwiki.disabled/" \
 --exclude="README.md" \
+--exclude=".kerb/" \
 $src ${trg}/full/
