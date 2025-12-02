@@ -222,6 +222,7 @@ go/
 .vagrant.d/*
 __pycache__/*
 .m2/
+.kerb/
 .config/coc/
 .config/mutt/*cache
 .config/mutt/**/*tokens
