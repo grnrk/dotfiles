@@ -2,8 +2,13 @@
 
 profile workdesk {
     # output $laptop
-    output eDP-1 enable position 0,0 mode 1920x1080 scale 1
-    output "Dell Inc. DELL U2715H GH85D73R0N5S" scale 1 mode 2560x1440@59.951Hz
+    output "Dell Inc. DELL U2715H GH85D73R0N5S" position 0,0 scale 1 mode 2560x1440@59.951Hz
+    output eDP-1 enable position 2560,0 mode 1920x1080 scale 1
+}
+
+profile home {
+    output "Dell Inc. DELL U2515H 9X2VY74S0GFL" position 0,0 scale 1 mode 2560x1440@59.951Hz
+    output eDP-1 enable position 2560,0 mode 1920x1080 scale 1
 }
 
 profile random-hdmi {
