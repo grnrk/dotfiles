@@ -237,3 +237,14 @@ libvirt/
 .sdirs*
 .config/systemd/user/default.target.wants/
 .config/gh
+.docker
+GP_HTML
+signal-desktop*
+.bash_logout
+.bashrc
+.config/GNOME-xdg-terminals.list
+.config/mozilla/firefox/Crash Reports/crash_helper_server.log
+.config/ruff/ruff-receipt.json
+.config/ubuntu-xdg-terminals.list
+.config/uv/uv-receipt.json
+pangpa.xml
