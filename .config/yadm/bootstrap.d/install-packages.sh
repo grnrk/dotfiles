@@ -29,7 +29,6 @@ case $1 in
   ;;
   "display")
     PACKAGES=(
-      'adapta-gtk-theme'
       'ddgr'
       'pavucontrol'
       'playerctl'

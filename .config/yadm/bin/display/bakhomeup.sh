@@ -20,7 +20,6 @@ find ${trg}/incr/ -maxdepth 1 -type d -mtime +$KEEP_DAYS -exec rm -rf {} \;
 rsync -qaz --delete --inplace --backup \
 --backup-dir=${trg}/incr/${date} \
 --exclude=".thunderbird/" \
---exclude=".mozilla/" \
 --exclude="nobackup/" \
 --exclude="VirtualBox*" \
 --exclude="Maildir/" \
@@ -40,8 +39,8 @@ rsync -qaz --delete --inplace --backup \
 --exclude=".awx-env" \
 --exclude=".adquery.ini" \
 --exclude=".ansible_vault_pass" \
---exclude=".local/share/fish/fish_history*" \
 --exclude="vimwiki.disabled/" \
 --exclude="README.md" \
 --exclude=".kerb/" \
+--exclude=".npm/" \
 $src ${trg}/full/
