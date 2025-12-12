@@ -8,6 +8,8 @@ include ~/.config/sway/local.d/*
 # mark xwayland windows
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # Set keyboard layout
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 input "type:keyboard" {
