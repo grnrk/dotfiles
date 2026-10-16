@@ -24,7 +24,8 @@ input "type:touchpad" {
 set $mod Mod4
 set $exec exec --no-startup-id
 set $terminal alacritty
-set $wallpaper ~/.config/yadm/wallpaper/active_i3_wallpaper.png
+# set $wallpaper ~/.config/yadm/wallpaper/active_i3_wallpaper.png
+set $wallpaper ~/.config/yadm/wallpaper/debian-emerald_grey.png
 set $locker 'swaylock --daemonize --config ~/.config/swaylock/config'
 
 # Idle locker
@@ -259,8 +260,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # Screenshot
-bindsym Print exec grimshot --notify save area ~/Pictures/screenshot_$(date +"%Y%m%d-%H%M").png
-bindsym $mod+ctrl+p exec grimshot --notify save area ~/Pictures/screenshot_$(date +"%Y%m%d-%H%M").png
+bindsym Print exec grimshot --notify save area ~/Pictures/screenshot_$(date +"%Y%m%d-%H%M%S").png
+bindsym $mod+ctrl+p exec grimshot --notify save area ~/Pictures/screenshot_$(date +"%Y%m%d-%H%M%S").png
 
 ### COLORS ###
 # class                 border  backgr. text    indicator child_border
