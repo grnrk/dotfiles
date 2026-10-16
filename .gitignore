@@ -248,3 +248,16 @@ signal-desktop*
 .config/ubuntu-xdg-terminals.list
 .config/uv/uv-receipt.json
 pangpa.xml
+.config/Code/*
+!.config/Code/User/settings.json
+!.config/Code/User/keybindings.json
+!.config/Code/User/snippets/
+!.config/Code/User/profiles/
+.vscode/
+.vscode-shared/
+.rest-client/
+.infisical.json
+.infisical/
+.opencode/
+.dotnet/
+.copilot/

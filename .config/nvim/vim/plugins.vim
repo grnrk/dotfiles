@@ -5,10 +5,10 @@ call plug#begin()
 Plug 'shaunsingh/nord.nvim'
 " Original with less settings: https://github.com/nordtheme/vim
 
-" Markdown TOC popup menu
-Plug 'AntonVanAssche/md-headers.nvim'
+"  Markdown TOC popup menu
+" Plug 'AntonVanAssche/md-headers.nvim'
 " Requirement for md-headers.nvim
-Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-lua/plenary.nvim'
 
 " In terminal md preview
 Plug 'ellisonleao/glow.nvim'
@@ -41,7 +41,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 " TreeSitter is used for markdown because required by md-headers.nvim and render-markdown.nvim
 " Also good for vim. See lua/init.vim for full list of loaded langs.
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Locked to master because 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
 
 " Git integration
 Plug 'tpope/vim-fugitive'

@@ -45,3 +45,5 @@ meaning of the source material and do not add information that is not supported
 by the source material.
 
 Identify the intended audience and their expected technical knowledge before writing. If this is unclear and would change the level of detail, terminology, or explanations, ask the user to clarify. If the context makes the audience clear, proceed without asking. State an audience assumption in the document only when it is important for the reader to understand its scope or use.
+
+Keep README files concise. Focus on what the reader needs to get started and use the project: prerequisites, setup, configuration, common commands, and key behavior. Do not turn a README into a complete reference manual. Link to existing examples or detailed references instead of repeating them. Include edge cases and implementation details only when they are needed to use the project safely or correctly. Before finishing, remove repeated information and details that do not help the intended reader.
